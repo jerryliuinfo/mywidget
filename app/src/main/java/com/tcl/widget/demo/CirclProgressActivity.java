@@ -16,12 +16,12 @@ import com.tcl.widget.demo.widget.circleprogressbar.SolidCircleProgressBar;
  */
 
 public class CirclProgressActivity extends AppCompatActivity{
+    SolidCircleProgressBar progressBar;
     public static void launch(Activity from){
         from.startActivity(new Intent(from, CirclProgressActivity.class));
     }
 
 
-    SolidCircleProgressBar progressBar;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
