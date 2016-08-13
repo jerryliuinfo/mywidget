@@ -20,11 +20,15 @@ public class CirclProgressActivity extends AppCompatActivity{
         from.startActivity(new Intent(from, CirclProgressActivity.class));
     }
 
+
     SolidCircleProgressBar progressBar;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_circle_progressbar);
         progressBar = (SolidCircleProgressBar) findViewById(R.id.progress1);
+
+
+
     }
 }
