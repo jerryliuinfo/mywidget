@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CircleProgressBar">
+        <!--背景颜色-->
+        <attr name="background_color"  format="color|reference"/>
+        <!--中间文字颜色-->
+        <attr name="progress_text_color" format="color|reference"/>
+        <!--中间文字大小-->
+        <attr name="progress_text_size" format="dimension|reference"/>
+
+        <!--进度条背景颜色-->
+        <attr name="progress_background_color" format="color|reference"/>
+        <!--进度条开始颜色-->
+        <attr name="progress_start_color" format="color|reference"/>
+        <!--进度条结束颜色-->
+        <attr name="progress_end_color" format="color|reference"/>
+    </declare-styleable>
+</resources>

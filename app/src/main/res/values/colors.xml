@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <color name="red">#FF0000</color><!-- 红色 -->
+    <color name="white">#FFFFFF</color><!-- 白色 -->
+    <color name="black">#000000</color><!-- 黑色 -->
+    <color name="yellow">#FFFF00</color><!-- 黄色 -->
+    <color name="blue">#3300FF</color><!-- 蓝色 -->
+    <color name="green">#00FF00</color><!-- 绿色 -->
+    <color name="violet">#6600FF</color><!--紫色  -->
+    <color name="brown">#714f16</color><!--褐色  -->
+    <color name="gray">#808a87</color><!-- 灰色 -->
+    <color name="dialogback">#7a510d</color>
+    <color name="detailTitle">#997354</color><!-- 业务详情标题颜色 -->
+    <color name="detailContent">#665d4c</color><!-- 业务详情内容颜色-->
+    <color name="paytitleName">#4b2c02</color><!-- 支付方式小标题名字 颜色-->
+    <color name="paytitleBack">#e4d2bb</color><!-- 支付方式小标题背景色 -->
+    <color name="paycontent">#8b6830</color><!-- 支付方式文字的颜色 -->
+    <color name="payback">#f9efe3</color><!-- 支付方式界面背景色 -->
+    <color name="payaction">#442403</color><!-- 支付流程文字的颜色 -->
+    <color name="recharging_step">#e0c8ad</color><!-- 手机充值步骤文字标题 -->
+    <color name="selsetor_list">#f6f0e9</color><!-- ListView选中得颜色 -->
+    <color name="gamedetailtitle">#242424</color>
+    <color name="gamedetailcontent">#5d5d5d</color>
+    <color name="edithintColor">#cbcbcb</color>
+    <color name="edittitle">#373737</color>
+
+    <color name="bg_color">#DBDBDB</color>
+
+
+
+
+
+
+
+    <!-- A light Holo shade of blue -->
+    <color name="holo_blue_light">#ff33b5e5</color>
+    <!-- A light Holo shade of gray -->
+    <color name="holo_gray_light">#33999999</color>
+    <!-- A light Holo shade of green -->
+    <color name="holo_green_light">#ff99cc00</color>
+    <!-- A light Holo shade of red -->
+    <color name="holo_red_light">#ffff4444</color>
+    <!-- A dark Holo shade of blue -->
+    <color name="holo_blue_dark">#ff0099cc</color>
+    <!-- A dark Holo shade of green -->
+    <color name="holo_green_dark">#ff669900</color>
+    <!-- A dark Holo shade of red -->
+    <color name="holo_red_dark">#ffcc0000</color>
+    <!-- A Holo shade of purple -->
+    <color name="holo_purple">#ffaa66cc</color>
+    <!-- A light Holo shade of orange -->
+    <color name="holo_orange_light">#ffffbb33</color>
+    <!-- A dark Holo shade of orange -->
+    <color name="holo_orange_dark">#ffff8800</color>
+    <!-- A really bright Holo shade of blue -->
+    <color name="holo_blue_bright">#ff00ddff</color>
+    <!-- A really bright Holo shade of gray -->
+    <color name="holo_gray_bright">#33CCCCCC</color>
+    <!-- A really lighter Holo shade of gray -->
+    <color name="holo_lighter_gray">#ffefefef</color>
+    <!-- A really darker Holo shade of gray -->
+    <color name="holo_darker_gray">#ffaaaaaa</color>
+</resources>
