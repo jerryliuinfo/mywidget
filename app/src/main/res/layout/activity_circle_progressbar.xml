@@ -23,7 +23,7 @@
         app:background_color="@color/holo_darker_gray"
         app:progress_text_color="@color/holo_blue_light"
         app:progress_text_size="15sp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         />
 
     <com.tcl.widget.demo.widget.circleprogressbar.CircleProgressBar
@@ -36,7 +36,7 @@
         app:progress_start_color="@color/holo_green_light"
         app:progress_end_color="@color/holo_red_light"
         app:progress_text_size="15sp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         />
     <com.tcl.widget.demo.widget.circleprogressbar.CircleProgressBar
         android:id="@+id/custom_progress4"
@@ -47,6 +47,34 @@
         app:progress_background_color="@color/holo_darker_gray"
         app:progress_start_color="@color/holo_red_light"
         app:progress_text_color="@color/holo_blue_light"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
+        />
+    <com.tcl.widget.demo.widget.circleprogressbar.CircleProgressBar
+        android:id="@+id/custom_progress5"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:style="line"
+        app:progress_line_width="6dp"
+        app:background_color="@color/white"
+        app:progress_start_color="@color/holo_orange_light"
+        app:progress_end_color="@color/blue"
+        app:progress_text_color="@color/holo_blue_light"
+        android:layout_marginTop="10dp"
+        />
+
+    <com.tcl.widget.demo.widget.circleprogressbar.CircleProgressBar
+        android:id="@+id/custom_progress6"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:style="solid_line"
+        app:progress_stroke_width="4dp"
+        app:progress_stroke_cap="round"
+        app:shader="sweep"
+        app:background_color="@color/white"
+        app:progress_background_color="@color/holo_darker_gray"
+        app:progress_start_color="@color/holo_purple"
+        app:progress_end_color="@android:color/transparent"
+        app:progress_text_color="@color/holo_blue_light"
+        android:layout_marginTop="10dp"
         />
 </LinearLayout>

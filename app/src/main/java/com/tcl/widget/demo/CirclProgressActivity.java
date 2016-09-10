@@ -28,6 +28,10 @@ public class CirclProgressActivity extends AppCompatActivity{
     CircleProgressBar mLineProgressBar;
     private CircleProgressBar mCustomProgressBar1;
     private CircleProgressBar mCustomProgressBar2;
+    private CircleProgressBar mCustomProgressBar3;
+    private CircleProgressBar mCustomProgressBar4;
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,11 +40,15 @@ public class CirclProgressActivity extends AppCompatActivity{
         mSolidProgressBar = (CircleProgressBar) findViewById(R.id.progress2);
         mCustomProgressBar1 = (CircleProgressBar) findViewById(R.id.custom_progress3);
         mCustomProgressBar2 = (CircleProgressBar) findViewById(R.id.custom_progress4);
+        mCustomProgressBar3 = (CircleProgressBar) findViewById(R.id.custom_progress5);
+        mCustomProgressBar4 = (CircleProgressBar) findViewById(R.id.custom_progress6);
 
         mSolidProgressBar.setMax(100);
         mLineProgressBar.setMax(100);
         mCustomProgressBar1.setMax(100);
         mCustomProgressBar2.setMax(100);
+        mCustomProgressBar3.setMax(100);
+        mCustomProgressBar4.setMax(100);
     }
 
     @Override
@@ -62,6 +70,8 @@ public class CirclProgressActivity extends AppCompatActivity{
                 mLineProgressBar.setProgress(progress);
                 mCustomProgressBar1.setProgress(progress);
                 mCustomProgressBar2.setProgress(progress);
+                mCustomProgressBar3.setProgress(progress);
+                mCustomProgressBar4.setProgress(progress);
             }
         });
         animator.setRepeatCount(ValueAnimator.INFINITE);
