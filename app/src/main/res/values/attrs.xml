@@ -15,5 +15,26 @@
         <attr name="progress_start_color" format="color|reference"/>
         <!--进度条结束颜色-->
         <attr name="progress_end_color" format="color|reference"/>
+
+
+
+
+        <!--针对线条的-->
+        <attr name="progress_line_count" format="integer"/>
+        <attr name="progress_line_width" format="dimension|reference"/>
+
+
+
+        <attr name="style">
+            <enum name="line" value="0"/>
+            <enum name="solid" value="1"/>
+            <enum name="solid_line" value="2"/>
+        </attr>
+
+        <attr name="shader">
+            <enum name="linear" value="0"/>
+            <enum name="radial" value="1"/>
+            <enum name="sweep" value="2"/>
+        </attr>
     </declare-styleable>
 </resources>

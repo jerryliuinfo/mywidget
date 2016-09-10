@@ -25,11 +25,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         handler.removeCallbacks(updateRunable);
         handler.post(updateRunable);
-
-        CirclProgressActivity.launch(this);
     }
 
 

@@ -1,16 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    >
-    <com.tcl.widget.demo.widget.circleprogressbar.SolidCircleProgressBar
+    android:orientation="vertical">
+
+    <com.tcl.widget.demo.widget.circleprogressbar.CircleProgressBar
         android:id="@+id/progress1"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        app:style="line"
+        app:background_color="@color/white"
+        app:progress_text_color="@color/holo_blue_light"
+        app:progress_text_size="15sp" />
+
+    <com.tcl.widget.demo.widget.circleprogressbar.CircleProgressBar
+        android:id="@+id/progress2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:style="solid"
         app:background_color="@color/holo_darker_gray"
-        app:progress_text_color = "@color/holo_blue_light"
-        app:progress_text_size = "15sp"
+        app:progress_text_color="@color/holo_blue_light"
+        app:progress_text_size="15sp"
+        android:layout_marginTop="30dp"
+        />
+
+    <com.tcl.widget.demo.widget.circleprogressbar.CircleProgressBar
+        android:id="@+id/custom_progress3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:style="line"
+        app:background_color="@color/white"
+        app:progress_text_color="@color/holo_blue_light"
+        app:progress_start_color="@color/holo_green_light"
+        app:progress_end_color="@color/holo_red_light"
+        app:progress_text_size="15sp"
+        android:layout_marginTop="30dp"
+        />
+    <com.tcl.widget.demo.widget.circleprogressbar.CircleProgressBar
+        android:id="@+id/custom_progress4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:style="solid"
+        app:shader="radial"
+        app:progress_background_color="@color/holo_darker_gray"
+        app:progress_start_color="@color/holo_red_light"
+        app:progress_text_color="@color/holo_blue_light"
+        android:layout_marginTop="30dp"
         />
 </LinearLayout>

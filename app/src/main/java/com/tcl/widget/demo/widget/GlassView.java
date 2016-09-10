@@ -17,7 +17,7 @@ import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
 import com.tcl.widget.demo.R;
-import com.tcl.widget.demo.uti.Logger;
+import com.tcl.widget.demo.uti.NLog;
 
 import java.text.DecimalFormat;
 
@@ -148,7 +148,7 @@ public class GlassView extends View{
     }
 
     public void setValue(float value) {
-        Logger.d(TAG, "setValue value = "+value);
+        NLog.d(TAG, "setValue value = "+value);
         postDelayed(new AnimRunable(value), 50);
     }
 
