@@ -3,6 +3,9 @@ package com.tcl.widget.demo;
 import android.app.Application;
 import android.content.Context;
 
+import com.tcl.widget.demo.uti.Logger;
+import com.tcl.widget.demo.uti.NLog;
+
 /**
  * @author Jerry
  * @Description:
@@ -19,6 +22,7 @@ public class MyApplicaiton extends Application {
 
         instance = this;
         mContext = getApplicationContext();
+        NLog.setDebug(true, Logger.VERBOSE);
     }
 
     public static Application getInstance(){

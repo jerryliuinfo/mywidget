@@ -65,4 +65,13 @@
     <color name="holo_lighter_gray">#ffefefef</color>
     <!-- A really darker Holo shade of gray -->
     <color name="holo_darker_gray">#ffaaaaaa</color>
+
+
+
+    <color name="progress_bg_color">#ffe3e3e5</color>
+    <color name="progress_start_color">#fff2a670</color>
+
+
+
+
 </resources>
