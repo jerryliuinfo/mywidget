@@ -3,6 +3,8 @@ package com.tcl.widget.demo;
 import android.app.Application;
 import android.test.ApplicationTestCase;
 
+import com.tcl.widget.demo.uti.Logger;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
@@ -30,13 +32,13 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
                     try {
                         // 获取许可
                         semp.acquire();
-                        Logger.d(TAG, "Accessing: " + NO);
+                        //Logger.d(TAG, "Accessing: " + NO);
                         Thread.sleep((long) (Math.random() * 3000));
-                        Logger.d(TAG, "before release-------" + semp.availablePermits());
+                       // Logger.d(TAG, "before release-------" + semp.availablePermits());
                         // 访问完后，释放
                         semp.release();
                         //availablePermits()指的是当前信号灯库中有多少个可以被使用
-                        Logger.d(TAG, "after release-------" + semp.availablePermits());
+                        //Logger.d(TAG, "after release-------" + semp.availablePermits());
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

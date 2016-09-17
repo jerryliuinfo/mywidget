@@ -16,7 +16,10 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        CirclProgressActivity.launch(this);
+        //CirclProgressActivity.launch(this);
+        //CanvasActivity.launch(this);
+        //PieActivity.launch(this);
+        CheckViewActivity.launch(this);
         finish();
     }
 }
