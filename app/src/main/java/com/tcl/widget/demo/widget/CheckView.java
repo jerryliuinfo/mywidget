@@ -78,7 +78,7 @@ public class CheckView extends View {
                     invalidate();
                 }else if (mAnimState == ANIM_UNCHECK && isChecked){
                     mCurrentPage--;
-                    if (mCurrentPage < INIT_PAGE -1){
+                    if (mCurrentPage < INIT_PAGE ){
                         isChecked = false;
                         mAnimState = ANIM_NULL;
                         mCurrentPage = INIT_PAGE;

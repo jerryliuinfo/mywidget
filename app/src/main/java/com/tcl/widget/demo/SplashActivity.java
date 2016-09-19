@@ -17,9 +17,10 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         //CirclProgressActivity.launch(this);
-        //CanvasActivity.launch(this);
+       // CanvasActivity.launch(this);
         //PieActivity.launch(this);
-        CheckViewActivity.launch(this);
+        //CheckViewActivity.launch(this);
+        RadarActivity.launch(this);
         finish();
     }
 }
