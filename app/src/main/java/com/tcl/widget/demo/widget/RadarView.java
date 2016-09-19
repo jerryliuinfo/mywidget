@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 
 /**
  * @author crazychen
@@ -24,7 +25,8 @@ public class RadarView extends View {
     private float maxValue = 100;             //数据最大值
     private Paint mainPaint;                //雷达区画笔  
     private Paint valuePaint;               //数据区画笔  
-    private Paint textPaint;                //文本画笔      
+    private Paint textPaint;                //文本画笔
+    private Paint dotPaint;
     
     public RadarView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
@@ -56,6 +58,9 @@ public class RadarView extends View {
         valuePaint.setColor(Color.BLUE);
         valuePaint.setStyle(Paint.Style.FILL_AND_STROKE);
 
+        dotPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        dotPaint.setColor(Color.GREEN);
+
         textPaint = new Paint();
         textPaint.setTextSize(20);
         textPaint.setStyle(Paint.Style.FILL);
@@ -79,8 +84,7 @@ public class RadarView extends View {
         drawPolygon_v2(canvas);
         drawLines(canvas);
         drawText(canvas);
-        /*
-        drawRegion(canvas);*/
+        drawRegion(canvas);
     }
 
     /**
@@ -153,11 +157,52 @@ public class RadarView extends View {
 
     private void drawText(Canvas canvas){
         for (int i = 0; i < count; i++){
-            float x = (float) (radius * Math.cos(angle * i));
-            float y = (float) (radius * Math.sin(angle * i));
-            canvas.drawText(titles[i], x, y , textPaint);
+            Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
+            float fontHeight = fontMetrics.descent - fontMetrics.ascent;
+            float x = (float) ( (radius + fontHeight / 2)* Math.cos(angle * i));
+            float y = (float) ((radius + fontHeight / 2)* Math.sin(angle * i));
+            if (angle * i >= 0 && angle * i <= Math.PI / 2 ){
+                canvas.drawText(titles[i], x, y , textPaint);
+            }else  if (angle * i > Math.PI / 2 && angle * i <= Math.PI ){
+                float dis = textPaint.measureText(titles[i]);
+                canvas.drawText(titles[i], x - dis, y , textPaint);
+            }else  if (angle * i > Math.PI  && angle * i <= Math.PI * 3 / 2){
+                float dis = textPaint.measureText(titles[i]);
+                canvas.drawText(titles[i], x - dis, y , textPaint);
+            }else  if (angle * i > Math.PI * 3 / 2 && angle * i <= Math.PI * 2){
+                canvas.drawText(titles[i], x, y , textPaint);
+            }
         }
     }
+
+    private void drawRegion(Canvas canvas){
+        Path path = new Path();
+        for (int i = 0; i < count; i++){
+            float percent = (float) (data[i] / maxValue);
+            float x = (float) (radius * Math.cos(angle * i) * percent);
+            float y = (float) (radius * Math.sin(angle * i) * percent);
+            if (i == 0){
+                path.moveTo(x, 0);
+            }else {
+                path.lineTo(x,y);
+            }
+            //画小圆圈
+            canvas.drawCircle(x, y,10, dotPaint);
+        }
+        path.close();
+        valuePaint.setStyle(Paint.Style.STROKE);
+        valuePaint.setColor(Color.RED);
+        valuePaint.setStrokeWidth(3);
+        canvas.drawPath(path, valuePaint);
+
+
+        valuePaint.setStyle(Paint.Style.FILL);
+        valuePaint.setColor(Color.BLUE);
+        valuePaint.setAlpha(127);
+        canvas.drawPath(path, valuePaint);
+
+    }
+
 
 
 }  
