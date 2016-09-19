@@ -2,7 +2,10 @@ package com.tcl.widget.demo;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
+
+import com.tcl.widget.demo.container.FragmentContainerActivity;
 
 /**
  * @author Jerry
@@ -20,7 +23,8 @@ public class SplashActivity extends AppCompatActivity {
        // CanvasActivity.launch(this);
         //PieActivity.launch(this);
         //CheckViewActivity.launch(this);
-        RadarActivity.launch(this);
+        //RadarActivity.launch(this);
+        FragmentContainerActivity.launch(this,RadarFragment.class, null);
         finish();
     }
 }

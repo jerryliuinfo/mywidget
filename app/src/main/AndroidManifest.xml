@@ -22,7 +22,7 @@
         <activity android:name=".CanvasActivity"/>
         <activity android:name=".PieActivity"/>
         <activity android:name=".CheckViewActivity"/>
-        <activity android:name=".RadarActivity"/>
+        <activity android:name=".container.FragmentContainerActivity"/>
     </application>
 
 </manifest>
