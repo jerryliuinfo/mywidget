@@ -110,7 +110,7 @@ public class CheckView extends View {
         canvas.drawCircle(0, 0 , 200, mPaint);
 
         if (mBitmap == null){
-            mBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.checkmark);
+            mBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.aa_checkmark);
         }
 
         int slideLenght = mBitmap.getHeight();

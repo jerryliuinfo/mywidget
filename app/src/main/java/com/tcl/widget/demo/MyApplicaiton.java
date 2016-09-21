@@ -5,6 +5,7 @@ import android.content.Context;
 
 import com.tcl.widget.demo.uti.Logger;
 import com.tcl.widget.demo.uti.NLog;
+import com.tencent.bugly.crashreport.CrashReport;
 
 /**
  * @author Jerry
@@ -23,6 +24,8 @@ public class MyApplicaiton extends Application {
         instance = this;
         mContext = getApplicationContext();
         NLog.setDebug(true, Logger.VERBOSE);
+        CrashReport.initCrashReport(getApplicationContext(), "900053955", false);
+
     }
 
     public static Application getInstance(){
