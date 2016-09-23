@@ -26,5 +26,7 @@ public class SplashActivity extends AppCompatActivity {
         //RadarActivity.launch(this);
         FragmentContainerActivity.launch(this,RadarFragment.class, null);
         finish();
+
+        //commit12
     }
 }
