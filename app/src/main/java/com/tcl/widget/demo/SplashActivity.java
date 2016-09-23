@@ -29,6 +29,6 @@ public class SplashActivity extends AppCompatActivity {
 
         //commit12
 
-        //junk branch modify
+        //junk branch modify test
     }
 }
