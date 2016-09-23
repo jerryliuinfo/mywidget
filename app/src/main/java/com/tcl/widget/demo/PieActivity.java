@@ -30,6 +30,8 @@ public class PieActivity extends AppCompatActivity {
         //commit10
         pieWiew.setData(generateDatas());
 
+        //commit11
+
 
     }
 
