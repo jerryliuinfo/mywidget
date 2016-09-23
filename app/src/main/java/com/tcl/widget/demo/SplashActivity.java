@@ -28,5 +28,7 @@ public class SplashActivity extends AppCompatActivity {
         finish();
 
         //commit12
+
+        //junk branch
     }
 }
