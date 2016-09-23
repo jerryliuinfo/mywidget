@@ -28,6 +28,7 @@ public class PieActivity extends AppCompatActivity {
         pieWiew = (PieWiew) findViewById(R.id.pie_view);
         pieWiew.setStartAngel(-90);
         //commit8
+        //commit9
         pieWiew.setData(generateDatas());
 
 
