@@ -30,5 +30,6 @@ public class SplashActivity extends AppCompatActivity {
         //commit12
 
         //junk branch modify test222
+        //fixed 404 bug
     }
 }
