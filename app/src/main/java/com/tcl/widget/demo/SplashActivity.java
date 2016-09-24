@@ -18,7 +18,6 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         //CirclProgressActivity.launch(this);
        // CanvasActivity.launch(this);
         //PieActivity.launch(this);
@@ -26,10 +25,5 @@ public class SplashActivity extends AppCompatActivity {
         //RadarActivity.launch(this);
         FragmentContainerActivity.launch(this,RadarFragment.class, null);
         finish();
-
-        //commit12
-
-        //junk branch modify test222
-        //fixed 505 bug
     }
 }
