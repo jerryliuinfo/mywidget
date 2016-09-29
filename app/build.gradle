@@ -1,3 +1,4 @@
+// 声明是Android程序
 apply plugin: 'com.android.application'
 
 android {
@@ -5,18 +6,97 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
+        // 应用的包名
         applicationId "com.tcl.widget.demo"
         minSdkVersion 18
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+    /**
+     * 签名设置
+    */
+    signingConfigs {
+        gp {
+            storeFile file('GP')
+            storePassword '123456789'
+            keyAlias 'GP'
+            keyPassword '123456789'
+        }
+        preinstall {
+            storeFile file('PreInstall')
+            storePassword '123456789'
+            keyAlias 'PreInstall'
+            keyPassword '123456789'
         }
     }
+    /**
+     * 渠道打包（不同包名）
+     */
+    productFlavors {
+        //GP渠道
+        GP {
+            applicationId = 'com.hawk.widget.gp'
+            signingConfig signingConfigs.gp
+            minSdkVersion 18
+        }
+        //预装渠道
+        PreInstall {
+            applicationId = 'com.hawk.widget.preinstall'
+            signingConfig signingConfigs.preinstall
+        }
+
+    }
+
+
+
+    /**
+     * 混淆设置
+     */
+    buildTypes {
+        release {
+            // 是否进行混淆
+            minifyEnabled true
+            //压缩资源
+            shrinkResources true
+            // 混淆文件的位置
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable false
+            jniDebuggable false
+            signingConfig signingConfigs.gp
+            zipAlignEnabled true
+
+
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            buildConfigField "String", "BUGLY_APP_ID", "\"900055412\""
+        }
+        debug {
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            buildConfigField "String", "BUGLY_APP_ID", "\"900053955\""
+        }
+    }
+    /**
+     * 打包生成的apk文件名字配置
+     */
+    android.applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+
+            def outputFile = output.outputFile
+            def fileName = "mywidget.apk"
+            def versionName = "${defaultConfig.versionName}.${defaultConfig.versionCode}"
+            output.outputFile = new File(outputFile.parent, fileName)
+
+            //delete fileTree(dir: output.outputFile.parent, include: '*unaligned*.apk')
+        }
+    }
+
+
+    //这个是解决lint报错的代码
+    lintOptions {
+        abortOnError false
+    }
+
 }
 
 dependencies {

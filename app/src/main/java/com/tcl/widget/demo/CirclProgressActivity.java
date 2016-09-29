@@ -4,6 +4,7 @@ import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
@@ -78,4 +79,7 @@ public class CirclProgressActivity extends AppCompatActivity{
         animator.setDuration(4000);
         animator.start();
     }
+
+    private Handler mHandler = new Handler();
+
 }

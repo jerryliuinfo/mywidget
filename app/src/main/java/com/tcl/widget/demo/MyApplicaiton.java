@@ -15,6 +15,7 @@ import com.tencent.bugly.crashreport.CrashReport;
  */
 
 public class MyApplicaiton extends Application {
+    private static final String TAG = MyApplicaiton.class.getSimpleName();
     private static MyApplicaiton instance;
     private static Context mContext;
     @Override
@@ -24,9 +25,20 @@ public class MyApplicaiton extends Application {
         instance = this;
         mContext = getApplicationContext();
         NLog.setDebug(true, Logger.VERBOSE);
-        CrashReport.initCrashReport(getApplicationContext(), "900053955", false);
+        initBugly();
 
     }
+
+    private void initBugly(){
+        try{
+            NLog.d(TAG, "bugly app id = %s, debug = %b", BuildConfig.BUGLY_APP_ID,BuildConfig.DEBUG);
+            CrashReport.initCrashReport(getApplicationContext(), BuildConfig.BUGLY_APP_ID, BuildConfig.DEBUG);
+        }catch (Exception e){
+
+        }
+
+    }
+
 
     public static Application getInstance(){
         return instance;
