@@ -11,7 +11,7 @@ import android.view.ViewGroup;
  * Created by lenovo on 2016/9/30.
  */
 
-public class BeizerFragment  extends Fragment {
+public class BeizerFragment2 extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

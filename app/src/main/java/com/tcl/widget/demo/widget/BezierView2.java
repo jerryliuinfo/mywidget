@@ -16,24 +16,26 @@ import com.tcl.widget.demo.uti.NLog;
  * Created by lenovo on 2016/9/24.
  */
 
-public class BezierView extends View {
-    private static final String TAG = BezierView.class.getSimpleName();
+public class BezierView2 extends View {
+    private static final String TAG = BezierView2.class.getSimpleName();
     int mWidth,mHeight;
     private int mCenterX, mCenterY;
     private Paint mDotPaint;
     private Paint mAssistPaint;
     private Paint mBezierPaint;
-    private PointF mStart,mEnd,mControl;
-    public BezierView(Context context) {
+    private PointF mStart,mEnd, mControl1,mControl2;
+    private boolean mode = true;
+
+    public BezierView2(Context context) {
         super(context);
     }
 
-    public BezierView(Context context, AttributeSet attrs) {
+    public BezierView2(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public BezierView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public BezierView2(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
@@ -58,7 +60,12 @@ public class BezierView extends View {
 
         mStart = new PointF(0,0);
         mEnd = new PointF(0,0);
-        mControl = new PointF(0,0);
+        mControl1 = new PointF(0,0);
+        mControl2 = new PointF(0,0);
+    }
+
+    public void setMode(boolean mode) {
+        this.mode = mode;
     }
 
     @Override
@@ -77,16 +84,26 @@ public class BezierView extends View {
         mEnd.x = mCenterX + 200;
         mEnd.y = mCenterY;
 
-        mControl.x = mCenterX;
+        mControl1.x = mCenterX;
         mCenterY = mCenterY - 100;
+
+        mControl2.x = mCenterX;
+        mControl2.y = mCenterY - 100;
+
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         float x = event.getX();
         float y = event.getY();
-        mControl.x = x;
-        mControl.y = y;
+        if (mode){
+            mControl1.x = x;
+            mControl1.y = y;
+        }else {
+            mControl2.x = x;
+            mControl2.y = y;
+        }
+
         invalidate();
         return true;
 
@@ -103,18 +120,20 @@ public class BezierView extends View {
     private void drawPoint(Canvas canvas){
         canvas.drawPoint(mStart.x, mStart.y, mDotPaint);
         canvas.drawPoint(mEnd.x,mEnd.y, mDotPaint);
-        canvas.drawPoint(mControl.x,mControl.y, mDotPaint);
+        canvas.drawPoint(mControl1.x, mControl1.y, mDotPaint);
+        canvas.drawPoint(mControl2.x, mControl2.y, mDotPaint);
     }
 
     private void drawAssistLine(Canvas canvas){
-        canvas.drawLine(mStart.x,mStart.y,mControl.x,mControl.y,mAssistPaint);
-        canvas.drawLine(mEnd.x,mEnd.y,mControl.x,mControl.y,mAssistPaint);
+        canvas.drawLine(mStart.x,mStart.y, mControl1.x, mControl1.y,mAssistPaint);
+        canvas.drawLine(mEnd.x,mEnd.y, mControl2.x, mControl2.y,mAssistPaint);
+        canvas.drawLine(mControl1.x, mControl1.y, mControl2.x, mControl2.y,mAssistPaint);
     }
 
     private void drawBeizerLine(Canvas canvas){
         Path path = new Path();
         path.moveTo(mStart.x,mStart.y);
-        path.quadTo(mControl.x, mControl.y, mEnd.x,mEnd.y);
+        path.cubicTo(mControl1.x, mControl1.y, mControl2.x,mControl2.y, mEnd.x, mEnd.y);
         canvas.drawPath(path, mBezierPaint);
 
     }
