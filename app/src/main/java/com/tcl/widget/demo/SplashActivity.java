@@ -23,7 +23,8 @@ public class SplashActivity extends AppCompatActivity {
         //PieActivity.launch(this);
         //CheckViewActivity.launch(this);
         //RadarActivity.launch(this);
-        FragmentContainerActivity.launch(this,RadarFragment.class, null);
+        //FragmentContainerActivity.launch(this,RadarFragment.class, null);
+        FragmentContainerActivity.launch(this,BeizerFragment.class, null);
         finish();
     }
 }

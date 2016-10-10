@@ -2,29 +2,63 @@ package com.tcl.widget.demo.widget;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PointF;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
+
+import com.tcl.widget.demo.uti.NLog;
 
 /**
  * Created by lenovo on 2016/9/24.
  */
 
 public class BezierView extends View {
+    private static final String TAG = BezierView.class.getSimpleName();
     int mWidth,mHeight;
+    private int mCenterX, mCenterY;
+    private Paint mDotPaint;
+    private Paint mAssistPaint;
+    private Paint mBezierPaint;
+    private PointF mStart,mEnd,mControl;
     public BezierView(Context context) {
         super(context);
     }
 
     public BezierView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        init();
     }
 
     public BezierView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        init();
     }
 
     private void init(){
+        mDotPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        mDotPaint.setStyle(Paint.Style.STROKE);
+        mDotPaint.setColor(Color.GRAY);
+        mDotPaint.setStrokeWidth(20);
 
+        mAssistPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        mAssistPaint.setStyle(Paint.Style.STROKE);
+        mAssistPaint.setColor(Color.GRAY);
+        mAssistPaint.setStrokeWidth(4);
+
+
+        mBezierPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        mBezierPaint.setStyle(Paint.Style.STROKE);
+        mBezierPaint.setColor(Color.RED);
+        mBezierPaint.setStrokeWidth(8);
+
+
+        mStart = new PointF(0,0);
+        mEnd = new PointF(0,0);
+        mControl = new PointF(0,0);
     }
 
     @Override
@@ -32,13 +66,54 @@ public class BezierView extends View {
         super.onSizeChanged(w, h, oldw, oldh);
         mWidth = w ;
         mHeight = h ;
+        mCenterX = w / 2;
+        mCenterY = h / 2;
+        NLog.d(TAG, "onSizeChanged w = %d, h = %d", w,h);
+
+        //
+        mStart.x = mCenterX - 200;
+        mStart.y = mCenterY;
+
+        mEnd.x = mCenterX + 200;
+        mEnd.y = mCenterY;
+
+        mControl.x = mCenterX;
+        mCenterY = mCenterY - 100;
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        float x = event.getX();
+        float y = event.getY();
+        mControl.x = x;
+        mControl.y = y;
+        return super.onTouchEvent(event);
+
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
-        canvas.translate(mWidth / 2, mHeight /2);
-
+        drawPoint(canvas);
+        drawAssistLine(canvas);
+        drawBeizerLine();
     }
+
+    private void drawPoint(Canvas canvas){
+        canvas.drawPoint(mStart.x, mStart.y, mDotPaint);
+        canvas.drawPoint(mEnd.x,mEnd.y, mDotPaint);
+        canvas.drawPoint(mControl.x,mControl.y, mDotPaint);
+    }
+
+    private void drawAssistLine(Canvas canvas){
+        canvas.drawLine(mStart.x,mStart.y,mControl.x,mControl.y,mAssistPaint);
+        canvas.drawLine(mEnd.x,mEnd.y,mControl.x,mControl.y,mAssistPaint);
+    }
+
+    private void drawBeizerLine(){
+        Path path = new Path();
+        path.moveTo(mStart.x,mStart.y);
+    }
+
+
 }
