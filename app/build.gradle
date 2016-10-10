@@ -8,7 +8,7 @@ android {
     defaultConfig {
         // 应用的包名
         applicationId "com.tcl.widget.demo"
-        minSdkVersion 18
+        minSdkVersion 19
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -39,7 +39,7 @@ android {
         GP {
             applicationId = 'com.hawk.widget.gp'
             signingConfig signingConfigs.gp
-            minSdkVersion 18
+            minSdkVersion 19
         }
         //预装渠道
         PreInstall {
