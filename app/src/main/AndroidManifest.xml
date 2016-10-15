@@ -28,7 +28,6 @@
         <activity android:name=".CirclProgressActivity"/>
         <activity android:name=".CanvasActivity"/>
         <activity android:name=".PieActivity"/>
-        <activity android:name=".CheckViewActivity"/>
         <activity android:name=".container.FragmentContainerActivity"/>
 
         <service android:name=".service.LocalCastielService"/>

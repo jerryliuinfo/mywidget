@@ -23,15 +23,15 @@ public class SplashActivity extends AppCompatActivity {
         //CirclProgressActivity.launch(this);
        // CanvasActivity.launch(this);
         //PieActivity.launch(this);
-        //CheckViewActivity.launch(this);
+        //FragmentContainerActivity.launch(this,CheckViewFragment.class, null);
         //RadarActivity.launch(this);
         //FragmentContainerActivity.launch(this,RadarFragment.class, null);
         //FragmentContainerActivity.launch(this,BeizerFragment.class, null);
-        FragmentContainerActivity.launch(this,BeizerFragment2.class, null);
+        //FragmentContainerActivity.launch(this,BeizerFragment2.class, null);
         //FragmentContainerActivity.launch(this,PathBooleanFragment.class, null);
+        FragmentContainerActivity.launch(this,PathFillTypeFragment.class, null);
         finish();
 
-        // 启动本地服务和远程服务
         // 启动本地服务和远程服务
         startService(new Intent(this, LocalCastielService.class));
         startService(new Intent(this, RemoteCastielService.class));
