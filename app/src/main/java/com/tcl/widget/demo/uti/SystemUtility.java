@@ -22,7 +22,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.tcl.mig.commonframework.base.BaseApplication;
+import com.tcl.widget.demo.MyApplicaiton;
 
 import java.io.File;
 import java.util.List;
@@ -41,7 +41,7 @@ public class SystemUtility {
 
 	private static void setScreenInfo() {
 		DisplayMetrics dm = new DisplayMetrics();
-		WindowManager windowManager = (WindowManager) BaseApplication.getContext().getSystemService(Context.WINDOW_SERVICE);
+		WindowManager windowManager = (WindowManager) MyApplicaiton.getContext().getSystemService(Context.WINDOW_SERVICE);
 		windowManager.getDefaultDisplay().getMetrics(dm);
 		screenWidth = dm.widthPixels;
 		screenHeight = dm.heightPixels;
@@ -126,7 +126,7 @@ public class SystemUtility {
 
 	public static NetWorkType getNetworkType() {
 
-		ConnectivityManager connMgr = (ConnectivityManager) BaseApplication.getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+		ConnectivityManager connMgr = (ConnectivityManager) MyApplicaiton.getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 
 		NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 
@@ -183,7 +183,7 @@ public class SystemUtility {
 		 Intent intent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
 		 Uri uri = Uri.fromFile(file);
 		 intent.setData(uri);
-		 BaseApplication.getContext().sendBroadcast(intent);
+		 MyApplicaiton.getContext().sendBroadcast(intent);
 	}
 
 
@@ -241,7 +241,7 @@ public class SystemUtility {
      * @param  resId
      */
     public static final String getString(int resId) {
-        Context context = BaseApplication.getContext();
+        Context context = MyApplicaiton.getContext();
         if (context == null || context.getResources() == null){
             return  "";
         }
@@ -262,7 +262,7 @@ public class SystemUtility {
     public static final int getColor(int resId) {
         int color = 0x00000000;
         try {
-            color = BaseApplication.getContext().getResources().getColor(resId);
+            color = MyApplicaiton.getContext().getResources().getColor(resId);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -277,7 +277,7 @@ public class SystemUtility {
 	public static final Drawable getDrawable(int resId) {
 		Drawable drawable = null;
 		try {
-			drawable = BaseApplication.getContext().getResources().getDrawable(resId);
+			drawable = MyApplicaiton.getContext().getResources().getDrawable(resId);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
