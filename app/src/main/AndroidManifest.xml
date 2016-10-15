@@ -30,6 +30,9 @@
         <activity android:name=".PieActivity"/>
         <activity android:name=".CheckViewActivity"/>
         <activity android:name=".container.FragmentContainerActivity"/>
+
+        <service android:name=".service.LocalCastielService"/>
+        <service android:name=".service.RemoteCastielService" android:process=":com.castiel.remote"/>
     </application>
 
 </manifest>
