@@ -38,5 +38,6 @@ public class SplashActivity extends AppCompatActivity {
 
         // 1111
         //boost修改 2
+        //boost修改17:43
     }
 }
