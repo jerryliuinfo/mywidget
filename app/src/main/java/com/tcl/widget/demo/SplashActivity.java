@@ -37,6 +37,6 @@ public class SplashActivity extends AppCompatActivity {
         startService(new Intent(this, RemoteCastielService.class));
 
         // 1111
-        //boost修改
+        //boost修改 2
     }
 }
