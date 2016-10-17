@@ -44,6 +44,9 @@ public class SplashActivity extends AppCompatActivity {
         //18:43
         //18:51
         //boost 19:14
+
+        //19:15
+        //19:32
         //19:34
     }
 }
