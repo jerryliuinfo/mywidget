@@ -35,5 +35,7 @@ public class SplashActivity extends AppCompatActivity {
         // 启动本地服务和远程服务
         startService(new Intent(this, LocalCastielService.class));
         startService(new Intent(this, RemoteCastielService.class));
+
+        // master修改
     }
 }
