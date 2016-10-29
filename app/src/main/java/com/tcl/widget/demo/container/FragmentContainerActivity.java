@@ -5,9 +5,12 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.MotionEvent;
 
 
 import com.tcl.widget.demo.R;
+import com.tcl.widget.demo.uti.NLog;
+import com.tcl.widget.demo.widget.MyViewGroupA;
 
 import java.lang.reflect.Method;
 
@@ -115,6 +118,17 @@ public class FragmentContainerActivity extends BaseActivity {
         	getSupportActionBar().setDisplayShowHomeEnabled(false);
     }
 
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        NLog.d(MyViewGroupA.TAG, "FragmentContainerActivity dispatchTouchEvent");
+        return super.dispatchTouchEvent(ev);
+    }
 
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        NLog.d(MyViewGroupA.TAG, "FragmentContainerActivity onTouchEvent");
+        return super.onTouchEvent(event);
+
+    }
 
 }
