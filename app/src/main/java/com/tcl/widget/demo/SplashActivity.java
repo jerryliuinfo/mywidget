@@ -41,7 +41,6 @@ public class SplashActivity extends AppCompatActivity {
         startService(new Intent(this, LocalCastielService.class));
         startService(new Intent(this, RemoteCastielService.class));
 
-
         List<String> list = new ArrayList<>();
     }
 
