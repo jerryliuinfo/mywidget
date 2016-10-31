@@ -29,24 +29,13 @@ public class SplashActivity extends AppCompatActivity {
         //FragmentContainerActivity.launch(this,BeizerFragment.class, null);
         //FragmentContainerActivity.launch(this,BeizerFragment2.class, null);
         //FragmentContainerActivity.launch(this,PathBooleanFragment.class, null);
-        FragmentContainerActivity.launch(this,PathFillTypeFragment.class, null);
+        //FragmentContainerActivity.launch(this,PathFillTypeFragment.class, null);
+        //FragmentContainerActivity.launch(this, MatrixFragment.class, null);
+        FragmentContainerActivity.launch(this, EventDispatchAndConsumeFragment.class, null);
         finish();
 
         // 启动本地服务和远程服务
         startService(new Intent(this, LocalCastielService.class));
         startService(new Intent(this, RemoteCastielService.class));
-
-        // 1111
-        //boost修改 2
-        //boost修改17:43
-        //boost修改18:39
-        //boost修改18:40
-        //18:43
-        //18:51
-        //boost 19:14
-
-        //19:15
-        //19:32
-        //19:34
     }
 }
