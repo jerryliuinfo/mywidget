@@ -32,11 +32,11 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.gcssloop.viewsupporttest.R;
 import com.gcssloop.test.adapter.CommonAdapter;
 import com.gcssloop.test.adapter.ViewHolder;
 import com.gcssloop.test.date.MainMenu;
 import com.gcssloop.test.utils.CrashHandler;
+import com.gcssloop.viewsupporttest.R;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
