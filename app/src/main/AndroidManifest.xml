@@ -32,6 +32,13 @@
 
         <service android:name=".service.LocalCastielService"/>
         <service android:name=".service.RemoteCastielService" android:process=":com.castiel.remote"/>
+
+        <receiver android:name=".notification.NotificationBroadcastReceiver">
+            <intent-filter>
+                <action android:name="notification_cancelled"/>
+                <action android:name="notification_clicked"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

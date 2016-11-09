@@ -8,7 +8,7 @@ android {
     defaultConfig {
         // 应用的包名
         applicationId "com.tcl.widget.demo"
-        minSdkVersion 19
+        minSdkVersion 17
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -39,7 +39,7 @@ android {
         GP {
             applicationId = 'com.hawk.widget.gp'
             signingConfig signingConfigs.gp
-            minSdkVersion 19
+            minSdkVersion 17
         }
         //预装渠道
         PreInstall {
@@ -105,5 +105,4 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.alibaba:fastjson:1.2.12'
     compile 'com.tencent.bugly:crashreport:2.2.2'
-    compile project(':Library')
 }
