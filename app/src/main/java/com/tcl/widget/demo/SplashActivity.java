@@ -34,6 +34,7 @@ public class SplashActivity extends AppCompatActivity {
         FragmentContainerActivity.launch(this, EventDispatchAndConsumeFragment.class, null);
         finish();
 
+        //git stash test
         // 启动本地服务和远程服务
         startService(new Intent(this, LocalCastielService.class));
         startService(new Intent(this, RemoteCastielService.class));
