@@ -46,7 +46,17 @@
 
 
     <declare-styleable name="slideswitch">
+        <attr name="slide_bg_open_color" format="color" />
+        <attr name="slide_bg_close_color" format="color" />
+        <attr name="slide_block_open_color" format="color" />
+        <attr name="slide_block_close_color" format="color" />
         <attr name="themeColor" format="color" />
+
+        <attr name="slide_circle_radis" format="dimension" />
+        <attr name="padding_left" format="dimension" />
+        <attr name="padding_top" format="dimension" />
+        <attr name="corcle_padding_top" format="dimension" />
+
         <attr name="isOpen" format="boolean" />
         <attr name="shape">
             <enum name="rect" value="1" />

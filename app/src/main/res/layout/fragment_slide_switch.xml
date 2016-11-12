@@ -9,21 +9,21 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               >
 
-    <com.leaking.app.app
+   <!-- <com.tcl.widget.demo.widget.SlideSwitch
         android:id="@+id/swit"
         android:layout_width="150dip"
         android:layout_height="60dip"
         app:isOpen="true"
         app:shape="rect"
         app:themeColor="#ffee3a00" >
-    </com.leaking.app.app>
+    </com.tcl.widget.demo.widget.SlideSwitch>
 
     <TextView
         android:id="@+id/txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <com.leaking.app.app
+    <com.tcl.widget.demo.widget.SlideSwitch
         android:id="@+id/swit2"
         android:layout_width="190dip"
         android:layout_height="100dip"
@@ -31,19 +31,28 @@
         app:isOpen="true"
         app:shape="circle"
         app:themeColor="#ff0a5a00" >
-    </com.leaking.app.app>
-
-    <com.leaking.app.app
+    </com.tcl.widget.demo.widget.SlideSwitch>
+-->
+    <com.tcl.widget.demo.widget.SlideSwitch
         android:id="@+id/swit3"
-        android:layout_width="20dip"
-        android:layout_height="50dip"
+        android:layout_width="63dip"
+        android:layout_height="32dip"
         android:layout_marginTop="10dip"
         app:isOpen="true"
         app:shape="circle"
-        app:themeColor="#ff73aa00" >
-    </com.leaking.app.app>
+        app:themeColor="#ff73aa00"
+        app:slide_bg_open_color="#7F26A5F6"
+        app:slide_bg_close_color="#D8D8D8"
+        app:slide_block_open_color="#26A5F6"
+        app:slide_block_close_color="#F1F1F1"
+        app:slide_circle_radis="27dp"
+        app:padding_left="4dp"
+        app:padding_top="6dp"
+        app:corcle_padding_top="3dp"
+        >
+    </com.tcl.widget.demo.widget.SlideSwitch>
 
-    <com.leaking.app.app
+   <!-- <com.tcl.widget.demo.widget.SlideSwitch
         android:id="@+id/swit4"
         android:layout_width="100dip"
         android:layout_height="120dip"
@@ -51,9 +60,9 @@
         app:isOpen="false"
         app:shape="circle"
         app:themeColor="#f200aa96" >
-    </com.leaking.app.app>
+    </com.tcl.widget.demo.widget.SlideSwitch>
 
-    <com.leaking.app.app
+    <com.tcl.widget.demo.widget.SlideSwitch
         android:id="@+id/swit5"
         android:layout_width="90dip"
         android:layout_height="50dip"
@@ -61,6 +70,6 @@
         app:isOpen="true"
         app:shape="rect"
         app:themeColor="#f23331a0" >
-    </com.leaking.app.app>
+    </com.tcl.widget.demo.widget.SlideSwitch>-->
 
 </LinearLayout>

@@ -20,6 +20,10 @@ import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
 import com.tcl.widget.demo.R;
+import com.tcl.widget.demo.uti.NLog;
+import com.tcl.widget.demo.view.util.DisplayUtil;
+
+import static android.R.attr.radius;
 
 /**
  * @author Jerry
@@ -29,17 +33,19 @@ import com.tcl.widget.demo.R;
  */
 
 public class SlideSwitch extends View {
-
+    private static final String TAG = SlideSwitch.class.getSimpleName();
     public static final int SHAPE_RECT = 1;
     public static final int SHAPE_CIRCLE = 2;
     private static final int RIM_SIZE = 6;
     private static final int DEFAULT_COLOR_THEME = Color.parseColor("#ff00ee00");
     // 3 attributes
-    private int color_theme;
     private boolean isOpen;
     private int shape;
-    // varials of drawing
-    private Paint paint;
+
+    private Paint slideBgpaint;//背景画笔
+
+    private Paint blockPaint;//滑块画笔
+
     private Rect backRect;
     private Rect frontRect;
     private RectF frontCircleRect;
@@ -56,24 +62,47 @@ public class SlideSwitch extends View {
     private SlideListener listener;
 
     public interface SlideListener {
-        public void open();
+         void open();
 
-        public void close();
+         void close();
     }
 
     public SlideSwitch(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         listener = null;
-        paint = new Paint();
-        paint.setAntiAlias(true);
+        slideBgpaint = new Paint();
+        slideBgpaint.setAntiAlias(true);
+
+        blockPaint = new Paint();
+        blockPaint.setAntiAlias(true);
+
         TypedArray a = context.obtainStyledAttributes(attrs,
                 R.styleable.slideswitch);
-        color_theme = a.getColor(R.styleable.slideswitch_themeColor,
+        slide_bg_open_color = a.getColor(R.styleable.slideswitch_slide_bg_open_color,
                 DEFAULT_COLOR_THEME);
+        slide_bg_close_color = a.getColor(R.styleable.slideswitch_slide_bg_close_color,
+                DEFAULT_COLOR_THEME);
+        slide_block_open_color = a.getColor(R.styleable.slideswitch_slide_block_open_color,
+                DEFAULT_COLOR_THEME);
+        slide_block_close_color = a.getColor(R.styleable.slideswitch_slide_block_close_color,
+                DEFAULT_COLOR_THEME);
+
+        bg_padding_left = a.getDimensionPixelOffset(R.styleable.slideswitch_padding_left, DisplayUtil.dp2px(context,4));
+        bg_padding_top = a.getDimensionPixelOffset(R.styleable.slideswitch_padding_top, DisplayUtil.dp2px(context,6));
+        circle_padding_top = a.getDimensionPixelOffset(R.styleable.slideswitch_corcle_padding_top, DisplayUtil.dp2px(context,3f));
+
         isOpen = a.getBoolean(R.styleable.slideswitch_isOpen, false);
         shape = a.getInt(R.styleable.slideswitch_shape, SHAPE_RECT);
         a.recycle();
     }
+
+    private int slide_bg_open_color;
+    private int slide_bg_close_color;
+    private int slide_block_open_color;
+    private int slide_block_close_color;
+    private int bg_padding_left = 4;
+    private int bg_padding_top = 6;
+    private int circle_padding_top = 3;
 
     public SlideSwitch(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
@@ -88,6 +117,7 @@ public class SlideSwitch extends View {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         int width = measureDimension(280, widthMeasureSpec);
         int height = measureDimension(140, heightMeasureSpec);
+        NLog.d(TAG, "onMeasure width = %d, height = %d, shape = %d, ", width,height,shape);
         if (shape == SHAPE_CIRCLE) {
             if (width < height)
                 width = height * 2;
@@ -96,24 +126,25 @@ public class SlideSwitch extends View {
         initDrawingVal();
     }
 
+    int mWiewWidth;
+    int mWiewHeight;
     public void initDrawingVal() {
-        int width = getMeasuredWidth();
-        int height = getMeasuredHeight();
+        mWiewWidth = getMeasuredWidth();
+        mWiewHeight = getMeasuredHeight();
 
         backCircleRect = new RectF();
+        backRect = new Rect(bg_padding_left, bg_padding_top, mWiewWidth - bg_padding_left, mWiewHeight - bg_padding_top);
+
         frontCircleRect = new RectF();
         frontRect = new Rect();
-        backRect = new Rect(0, 0, width, height);
-        min_left = RIM_SIZE;
-        if (shape == SHAPE_RECT)
-            max_left = width / 2;
-        else
-            max_left = width - (height - 2 * RIM_SIZE) - RIM_SIZE;
+
+        min_left = bg_padding_left;
+        max_left = mWiewWidth  -  bg_padding_left - (mWiewHeight - circle_padding_top * 2);
         if (isOpen) {
             frontRect_left = max_left;
             alpha = 255;
         } else {
-            frontRect_left = RIM_SIZE;
+            frontRect_left = min_left;
             alpha = 0;
         }
         frontRect_left_begin = frontRect_left;
@@ -136,35 +167,46 @@ public class SlideSwitch extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        if (shape == SHAPE_RECT) {
-            paint.setColor(Color.GRAY);
-            canvas.drawRect(backRect, paint);
-            paint.setColor(color_theme);
-            paint.setAlpha(alpha);
-            canvas.drawRect(backRect, paint);
-            frontRect.set(frontRect_left, RIM_SIZE, frontRect_left
-                    + getMeasuredWidth() / 2 - RIM_SIZE, getMeasuredHeight()
-                    - RIM_SIZE);
-            paint.setColor(Color.WHITE);
-            canvas.drawRect(frontRect, paint);
-        } else {
-            // draw circle
-            int radius;
-            radius = backRect.height() / 2 - RIM_SIZE;
-            paint.setColor(Color.GRAY);
-            backCircleRect.set(backRect);
-            canvas.drawRoundRect(backCircleRect, radius, radius, paint);
-            paint.setColor(color_theme);
-            paint.setAlpha(alpha);
-            canvas.drawRoundRect(backCircleRect, radius, radius, paint);
-            frontRect.set(frontRect_left, RIM_SIZE, frontRect_left
-                    + backRect.height() - 2 * RIM_SIZE, backRect.height()
-                    - RIM_SIZE);
-            frontCircleRect.set(frontRect);
-            paint.setColor(Color.WHITE);
-            canvas.drawRoundRect(frontCircleRect, radius, radius, paint);
-        }
+        //画背景椭圆
+        drawBgRect(canvas);
+        //画滑块
+        drawBlock(canvas);
     }
+
+    /**
+     * 画背景椭圆
+     * @param canvas
+     */
+    private void drawBgRect(Canvas canvas){
+        // 画背景椭圆
+        int radius = backRect.height() / 2;
+        backCircleRect.set(backRect);
+        if (isOpen){
+            slideBgpaint.setColor(slide_bg_open_color);
+        }else {
+            slideBgpaint.setColor(slide_bg_close_color);
+        }
+        canvas.drawRoundRect(backCircleRect, radius, radius, slideBgpaint);
+    }
+
+
+    /**
+     * 画滑块
+     * @param canvas
+     */
+    private void drawBlock(Canvas canvas){
+        frontRect.set(frontRect_left, backRect.top - circle_padding_top, frontRect_left + mWiewHeight - 2 * circle_padding_top,
+                mWiewHeight - circle_padding_top);
+        frontCircleRect.set(frontRect);
+        if (isOpen){
+            blockPaint.setColor(slide_block_open_color);
+        }else {
+            blockPaint.setColor(slide_block_close_color);
+        }
+        canvas.drawRoundRect(frontCircleRect, radius, radius, blockPaint);
+    }
+
+
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {

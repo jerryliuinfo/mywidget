@@ -31,7 +31,8 @@ public class SplashActivity extends AppCompatActivity {
         //FragmentContainerActivity.launch(this,PathBooleanFragment.class, null);
         //FragmentContainerActivity.launch(this,PathFillTypeFragment.class, null);
         //FragmentContainerActivity.launch(this, MatrixFragment.class, null);
-        FragmentContainerActivity.launch(this, EventDispatchAndConsumeFragment.class, null);
+        //FragmentContainerActivity.launch(this, EventDispatchAndConsumeFragment.class, null);
+        FragmentContainerActivity.launch(this, SlideSwitchFragment.class, null);
         finish();
 
         //git stash test
