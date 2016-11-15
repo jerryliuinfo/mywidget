@@ -35,7 +35,7 @@
 -->
     <com.tcl.widget.demo.widget.SlideSwitch
         android:id="@+id/swit3"
-        android:layout_width="63dip"
+        android:layout_width="54dip"
         android:layout_height="32dip"
         android:layout_marginTop="10dip"
         app:isOpen="true"

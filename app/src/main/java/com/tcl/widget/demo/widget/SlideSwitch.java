@@ -155,11 +155,15 @@ public class SlideSwitch extends View {
         int specMode = MeasureSpec.getMode(measureSpec);
         int specSize = MeasureSpec.getSize(measureSpec);
         if (specMode == MeasureSpec.EXACTLY) {
+            NLog.d(TAG, "measureDimension specMode == MeasureSpec.EXACTLY");
             result = specSize;
         } else {
             result = defaultSize; // UNSPECIFIED
             if (specMode == MeasureSpec.AT_MOST) {
                 result = Math.min(result, specSize);
+                NLog.d(TAG, "measureDimension specMode == MeasureSpec.AT_MOST");
+            }else {
+                NLog.d(TAG, "measureDimension specMode not MeasureSpec.AT_MOST");
             }
         }
         return result;
@@ -263,7 +267,7 @@ public class SlideSwitch extends View {
     public void moveToDest(final boolean toRight) {
         ValueAnimator toDestAnim = ValueAnimator.ofInt(frontRect_left,
                 toRight ? max_left : min_left);
-        toDestAnim.setDuration(500);
+        toDestAnim.setDuration(300);
         toDestAnim.setInterpolator(new AccelerateDecelerateInterpolator());
         toDestAnim.start();
         toDestAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
