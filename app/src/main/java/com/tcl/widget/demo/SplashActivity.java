@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.tcl.widget.demo.container.FragmentContainerActivity;
 import com.tcl.widget.demo.service.LocalCastielService;
 import com.tcl.widget.demo.service.RemoteCastielService;
+import com.tcl.widget.demo.ui.fragment.MaterialEdittextFragment;
 
 /**
  * @author Jerry
@@ -33,7 +34,8 @@ public class SplashActivity extends AppCompatActivity {
         //FragmentContainerActivity.launch(this, MatrixFragment.class, null);
         //FragmentContainerActivity.launch(this, EventDispatchAndConsumeFragment.class, null);
         //FragmentContainerActivity.launch(this, SlideSwitchFragment.class, null);
-        FragmentContainerActivity.launch(this, LayoutOptimizeFragment.class, null);
+        //FragmentContainerActivity.launch(this, LayoutOptimizeFragment.class, null);
+        FragmentContainerActivity.launch(this, MaterialEdittextFragment.class, null);
         finish();
 
         //git stash test

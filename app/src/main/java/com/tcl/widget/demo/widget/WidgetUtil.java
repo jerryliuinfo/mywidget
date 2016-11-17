@@ -9,7 +9,7 @@ import android.view.MotionEvent;
  * @copyright TCL-MIG
  */
 
-public class ViewUtil {
+public class WidgetUtil {
     public static String getMotionEventDesc(MotionEvent event){
         if (event.getAction() == MotionEvent.ACTION_DOWN){
             return "ACTION_DOWN";

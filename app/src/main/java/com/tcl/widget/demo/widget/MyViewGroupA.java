@@ -39,9 +39,9 @@ public class MyViewGroupA extends LinearLayout {
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         super.onInterceptTouchEvent(ev);
        /* boolean result = super.onInterceptTouchEvent(ev);
-        NLog.d(TAG, "MyViewGroupA onInterceptTouchEvent action = %s, return result = %b", ViewUtil.getMotionEventDesc(ev), result);
+        NLog.d(TAG, "MyViewGroupA onInterceptTouchEvent action = %s, return result = %b", WidgetUtil.getMotionEventDesc(ev), result);
         return result;*/
-        NLog.d(TAG, "MyViewGroupA onInterceptTouchEvent action = %s", ViewUtil.getMotionEventDesc(ev));
+        NLog.d(TAG, "MyViewGroupA onInterceptTouchEvent action = %s", WidgetUtil.getMotionEventDesc(ev));
         return false;
     }
 
@@ -49,7 +49,7 @@ public class MyViewGroupA extends LinearLayout {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         //boolean result = super.onTouchEvent(event);
-        NLog.d(TAG, "MyViewGroupA onTouchEvent action = %s", ViewUtil.getMotionEventDesc(event));
+        NLog.d(TAG, "MyViewGroupA onTouchEvent action = %s", WidgetUtil.getMotionEventDesc(event));
         return false;
     }
 }

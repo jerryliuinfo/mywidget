@@ -31,7 +31,7 @@ public class MyButton extends Button {
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         boolean result = super.dispatchTouchEvent(ev);
-        NLog.d(TAG, "MyButton dispatchTouchEvent action = %s, return result = %b", ViewUtil.getMotionEventDesc(ev), result);
+        NLog.d(TAG, "MyButton dispatchTouchEvent action = %s, return result = %b", WidgetUtil.getMotionEventDesc(ev), result);
         return result;
     }
 
@@ -41,9 +41,9 @@ public class MyButton extends Button {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         /*boolean result = super.onTouchEvent(event);
-        NLog.d(TAG, "MyButton onTouchEvent action = %s, return result = %b", ViewUtil.getMotionEventDesc(event), result);
+        NLog.d(TAG, "MyButton onTouchEvent action = %s, return result = %b", WidgetUtil.getMotionEventDesc(event), result);
         return result;*/
-        NLog.d(TAG, "MyButton onTouchEvent action = %s", ViewUtil.getMotionEventDesc(event));
+        NLog.d(TAG, "MyButton onTouchEvent action = %s", WidgetUtil.getMotionEventDesc(event));
         //return super.onTouchEvent(event);
         return super.onTouchEvent(event);
     }

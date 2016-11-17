@@ -2,11 +2,9 @@ package com.tcl.widget.demo;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 
-import com.tcl.widget.demo.notification.NotificationManagerWrapper;
 import com.tcl.widget.demo.ui.base.BaseFragment;
 import com.tcl.widget.demo.uti.NLog;
 import com.tcl.widget.demo.widget.MyViewGroupA;
@@ -33,7 +31,6 @@ public class EventDispatchAndConsumeFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 NLog.e(MyViewGroupA.TAG, "button onClick");
-                NotificationManagerWrapper.getInstance().sendNotification();
             }
         });
         /*button.setOnTouchListener(new View.OnTouchListener() {

@@ -31,7 +31,7 @@ public class MyViewGroupB extends LinearLayout {
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         boolean result = super.dispatchTouchEvent(ev);
-        NLog.d(TAG, "MyViewGroupB dispatchTouchEvent action = %s，return result = %b", ViewUtil.getMotionEventDesc(ev), result);
+        NLog.d(TAG, "MyViewGroupB dispatchTouchEvent action = %s，return result = %b", WidgetUtil.getMotionEventDesc(ev), result);
         return result;
     }
 
@@ -39,7 +39,7 @@ public class MyViewGroupB extends LinearLayout {
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
 //        boolean result = super.onInterceptTouchEvent(ev);
-//        NLog.d(TAG, "MyViewGroupB onInterceptTouchEvent action = %s, return result = %b", ViewUtil.getMotionEventDesc(ev), result);
+//        NLog.d(TAG, "MyViewGroupB onInterceptTouchEvent action = %s, return result = %b", WidgetUtil.getMotionEventDesc(ev), result);
         return false;
     }
 
@@ -47,9 +47,9 @@ public class MyViewGroupB extends LinearLayout {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         /*boolean result = super.onTouchEvent(event);
-        NLog.d(TAG, "MyViewGroupB onTouchEvent action = %s, ", ViewUtil.getMotionEventDesc(event));
+        NLog.d(TAG, "MyViewGroupB onTouchEvent action = %s, ", WidgetUtil.getMotionEventDesc(event));
         return result;*/
-        NLog.d(TAG, "MyViewGroupB onTouchEvent action = %s, ", ViewUtil.getMotionEventDesc(event));
+        NLog.d(TAG, "MyViewGroupB onTouchEvent action = %s, ", WidgetUtil.getMotionEventDesc(event));
         return false;
     }
 }
