@@ -31,6 +31,9 @@
         <service android:name=".service.RemoteCastielService" android:process=":com.castiel.remote"/>
 
         <activity android:name=".SecondActivity"  android:noHistory="true"/>
+        <activity android:name=".ui.fragment.NotificationReultActivity"
+            >
+        </activity>
     </application>
 
 </manifest>

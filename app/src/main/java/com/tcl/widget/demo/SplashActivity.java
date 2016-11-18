@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.tcl.widget.demo.notification.NotificationManagerWrapper;
 import com.tcl.widget.demo.service.LocalCastielService;
 import com.tcl.widget.demo.service.RemoteCastielService;
 
@@ -35,10 +36,10 @@ public class SplashActivity extends AppCompatActivity {
         findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SplashActivity.this, SecondActivity.class));
+                //startActivity(new Intent(SplashActivity.this, SecondActivity.class));
             }
         });
-
+        NotificationManagerWrapper.show(this);
 
 
        // finish();
