@@ -102,6 +102,7 @@ public class MaterialEditText  extends EditText {
                 fraction = (float) (-(5.0f / 2550.0f) * labelAlpha + 1.5);
                 NLog.d(TAG, "labelAlpha = %d, fraction = %f", labelAlpha,fraction);
                 invalidate();
+
             }
         });
         initListener();
