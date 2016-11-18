@@ -87,9 +87,9 @@ public class SlideSwitch extends View {
         slide_block_close_color = a.getColor(R.styleable.slideswitch_slide_block_close_color,
                 DEFAULT_COLOR_THEME);
 
-        bg_padding_left = a.getDimensionPixelOffset(R.styleable.slideswitch_padding_left, DisplayUtil.dp2px(context,4));
-        bg_padding_top = a.getDimensionPixelOffset(R.styleable.slideswitch_padding_top, DisplayUtil.dp2px(context,6));
-        circle_padding_top = a.getDimensionPixelOffset(R.styleable.slideswitch_corcle_padding_top, DisplayUtil.dp2px(context,3f));
+        bg_padding_left = a.getDimensionPixelOffset(R.styleable.slideswitch_padding_left, DisplayUtil.dp2px(4));
+        bg_padding_top = a.getDimensionPixelOffset(R.styleable.slideswitch_padding_top, DisplayUtil.dp2px(6));
+        circle_padding_top = a.getDimensionPixelOffset(R.styleable.slideswitch_corcle_padding_top, DisplayUtil.dp2px(3f));
 
         isOpen = a.getBoolean(R.styleable.slideswitch_isOpen, false);
         shape = a.getInt(R.styleable.slideswitch_shape, SHAPE_RECT);

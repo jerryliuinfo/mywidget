@@ -31,23 +31,6 @@ android {
             keyPassword '123456789'
         }
     }
-    /**
-     * 渠道打包（不同包名）
-     */
-    productFlavors {
-        //GP渠道
-        GP {
-            applicationId = 'com.hawk.widget.gp'
-            signingConfig signingConfigs.gp
-            minSdkVersion 17
-        }
-        //预装渠道
-        PreInstall {
-            applicationId = 'com.hawk.widget.preinstall'
-            signingConfig signingConfigs.preinstall
-        }
-
-    }
 
 
 

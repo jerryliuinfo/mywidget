@@ -12,4 +12,10 @@ public class ViewUtil {
         Paint.FontMetrics fontMetrics = paint.getFontMetrics();
         return fontMetrics.bottom-fontMetrics.descent-fontMetrics.ascent;
     }
+
+    public static float getTextWidth(Paint paint,String str){
+        return paint.measureText(str);
+    }
+
+
 }

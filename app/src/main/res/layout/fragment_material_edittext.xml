@@ -1,25 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              xmlns:app="http://schemas.android.com/apk/com.hawk.widget.gp"
-    >
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/com.hawk.widget.gp"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
 
-    <com.tcl.widget.demo.ui.widget.MaterialEditText
+
+
+    <LinearLayout
+        android:id="@+id/activity_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:maxLength = "12"
-        app:labelText="用户名"
-        app:labelColor="#18b4ed"
-        app:preLineColor="#18b4ed"
-        app:overlengthColor="@android:color/holo_red_light"
-        android:hint="用户名"
-        android:singleLine="true"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="5dp"
-        android:textSize="18sp"
-        />
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:background="#ffffff"
+        >
 
-</LinearLayout>
+        <com.tcl.widget.demo.ui.widget.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:maxLength = "12"
+            app:labelText="用户名"
+            app:labelColor="#18b4ed"
+            app:preLineColor="#18b4ed"
+            app:overlengthColor="@android:color/holo_red_light"
+            android:hint="用户名"
+            android:singleLine="true"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="0dp"/>
+
+    </LinearLayout>
+</ScrollView>

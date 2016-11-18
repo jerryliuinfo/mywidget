@@ -4,6 +4,10 @@ import android.content.Context;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 
+import com.tcl.widget.demo.MyApplicaiton;
+
+import static com.tencent.bugly.crashreport.inner.InnerAPI.context;
+
 /**
  * @author wangtianbao
  * @Description:内存扫描和垃圾扫描顶部的view
@@ -45,12 +49,12 @@ public class DisplayUtil {
         return 0;
     }
 
-    public static int dp2px(Context context, float value) {
-        return (int) applyDimension(context, DP_TO_PX, value, context.getResources().getDisplayMetrics());
+    public static int dp2px(float value) {
+        return (int) applyDimension(MyApplicaiton.getContext(), DP_TO_PX, value, context.getResources().getDisplayMetrics());
     }
 
-    public static int sp2px(Context context, float value) {
-        return (int) applyDimension(context, SP_TO_PX, value, context.getResources().getDisplayMetrics());
+    public static int sp2px(float value) {
+        return (int) applyDimension(MyApplicaiton.getContext(), SP_TO_PX, value, context.getResources().getDisplayMetrics());
     }
 
     public static int px2dp(Context context, float value) {
