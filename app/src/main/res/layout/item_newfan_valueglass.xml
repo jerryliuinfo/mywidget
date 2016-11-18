@@ -32,7 +32,7 @@
         android:paddingRight="7dip"
         android:paddingTop="8dip" >
 
-        <com.tcl.widget.demo.widget.GlassView
+        <com.tcl.widget.demo.ui.widget.GlassView
             android:id="@+id/glassview"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

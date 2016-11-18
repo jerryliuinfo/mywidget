@@ -6,7 +6,7 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <com.tcl.widget.demo.widget.circleprogressbar.CircleProgressBar
+    <com.tcl.widget.demo.ui.widget.circleprogressbar.CircleProgressBar
         android:id="@+id/progress1"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -16,7 +16,7 @@
         app:progress_text_color="@color/holo_blue_light"
         app:progress_text_size="15sp" />
 
-    <com.tcl.widget.demo.widget.circleprogressbar.CircleProgressBar
+    <com.tcl.widget.demo.ui.widget.circleprogressbar.CircleProgressBar
         android:id="@+id/progress2"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -28,7 +28,7 @@
         android:visibility="gone"
         />
 
-    <com.tcl.widget.demo.widget.circleprogressbar.CircleProgressBar
+    <com.tcl.widget.demo.ui.widget.circleprogressbar.CircleProgressBar
         android:id="@+id/custom_progress3"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -41,7 +41,7 @@
         android:layout_marginTop="10dp"
         android:visibility="gone"
         />
-    <com.tcl.widget.demo.widget.circleprogressbar.CircleProgressBar
+    <com.tcl.widget.demo.ui.widget.circleprogressbar.CircleProgressBar
         android:id="@+id/custom_progress4"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -53,7 +53,7 @@
         android:layout_marginTop="10dp"
         android:visibility="gone"
         />
-    <com.tcl.widget.demo.widget.circleprogressbar.CircleProgressBar
+    <com.tcl.widget.demo.ui.widget.circleprogressbar.CircleProgressBar
         android:id="@+id/custom_progress5"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -67,7 +67,7 @@
         android:visibility="gone"
         />
 
-    <com.tcl.widget.demo.widget.circleprogressbar.CircleProgressBar
+    <com.tcl.widget.demo.ui.widget.circleprogressbar.CircleProgressBar
         android:id="@+id/custom_progress6"
         android:layout_width="50dp"
         android:layout_height="50dp"

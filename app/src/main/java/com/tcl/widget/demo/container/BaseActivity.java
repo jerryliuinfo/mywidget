@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.tcl.widget.demo.R;
-import com.tcl.widget.demo.ui.base.BaseFragment;
+import com.tcl.widget.demo.ui.base.ABaseFragment;
 
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
@@ -28,9 +28,9 @@ public class BaseActivity extends AppCompatActivity {
     protected Context mContext;
 
     // 当有Fragment Attach到这个Activity的时候，就会保存
-    private Map<String, WeakReference<BaseFragment>> fragmentRefs;
+    private Map<String, WeakReference<ABaseFragment>> fragmentRefs;
 
-    public void addFragment(String tag, BaseFragment fragment) {
+    public void addFragment(String tag, ABaseFragment fragment) {
         fragmentRefs.put(tag, new WeakReference<>(fragment));
     }
 

@@ -24,10 +24,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".CirclProgressActivity"/>
-        <activity android:name=".CanvasActivity"/>
-        <activity android:name=".PieActivity"/>
         <activity android:name=".container.FragmentContainerActivity"/>
 
         <service android:name=".service.LocalCastielService"/>

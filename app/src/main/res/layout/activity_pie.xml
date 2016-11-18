@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     >
 
-     <com.tcl.widget.demo.widget.PieWiew
+     <com.tcl.widget.demo.ui.widget.PieWiew
          android:id="@+id/pie_view"
          android:layout_width="300dp"
          android:layout_height="300dp" />

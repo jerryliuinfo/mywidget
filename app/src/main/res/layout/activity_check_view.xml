@@ -5,7 +5,7 @@
     android:gravity="center"
     >
 
-    <com.tcl.widget.demo.widget.CheckView
+    <com.tcl.widget.demo.ui.widget.CheckView
         android:id="@+id/check_view"
         android:layout_width="400dp"
         android:layout_height="400dp" />

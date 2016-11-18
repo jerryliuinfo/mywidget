@@ -10,7 +10,7 @@ import android.view.MotionEvent;
 
 import com.tcl.widget.demo.R;
 import com.tcl.widget.demo.uti.NLog;
-import com.tcl.widget.demo.widget.MyViewGroupA;
+import com.tcl.widget.demo.ui.widget.MyViewGroupA;
 
 import java.lang.reflect.Method;
 

@@ -4,7 +4,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <com.tcl.widget.demo.widget.PathFillTypeView
+    <com.tcl.widget.demo.ui.widget.PathFillTypeView
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

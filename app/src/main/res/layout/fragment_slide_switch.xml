@@ -9,21 +9,21 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               >
 
-   <!-- <com.tcl.widget.demo.widget.SlideSwitch
+   <!-- <com.tcl.widget.demo.ui.widget.SlideSwitch
         android:id="@+id/swit"
         android:layout_width="150dip"
         android:layout_height="60dip"
         app:isOpen="true"
         app:shape="rect"
         app:themeColor="#ffee3a00" >
-    </com.tcl.widget.demo.widget.SlideSwitch>
+    </com.tcl.widget.demo.ui.widget.SlideSwitch>
 
     <TextView
         android:id="@+id/txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <com.tcl.widget.demo.widget.SlideSwitch
+    <com.tcl.widget.demo.ui.widget.SlideSwitch
         android:id="@+id/swit2"
         android:layout_width="190dip"
         android:layout_height="100dip"
@@ -31,9 +31,9 @@
         app:isOpen="true"
         app:shape="circle"
         app:themeColor="#ff0a5a00" >
-    </com.tcl.widget.demo.widget.SlideSwitch>
+    </com.tcl.widget.demo.ui.widget.SlideSwitch>
 -->
-    <com.tcl.widget.demo.widget.SlideSwitch
+    <com.tcl.widget.demo.ui.widget.SlideSwitch
         android:id="@+id/swit3"
         android:layout_width="54dip"
         android:layout_height="32dip"
@@ -50,9 +50,9 @@
         app:padding_top="6dp"
         app:corcle_padding_top="3dp"
         >
-    </com.tcl.widget.demo.widget.SlideSwitch>
+    </com.tcl.widget.demo.ui.widget.SlideSwitch>
 
-   <!-- <com.tcl.widget.demo.widget.SlideSwitch
+   <!-- <com.tcl.widget.demo.ui.widget.SlideSwitch
         android:id="@+id/swit4"
         android:layout_width="100dip"
         android:layout_height="120dip"
@@ -60,9 +60,9 @@
         app:isOpen="false"
         app:shape="circle"
         app:themeColor="#f200aa96" >
-    </com.tcl.widget.demo.widget.SlideSwitch>
+    </com.tcl.widget.demo.ui.widget.SlideSwitch>
 
-    <com.tcl.widget.demo.widget.SlideSwitch
+    <com.tcl.widget.demo.ui.widget.SlideSwitch
         android:id="@+id/swit5"
         android:layout_width="90dip"
         android:layout_height="50dip"
@@ -70,6 +70,6 @@
         app:isOpen="true"
         app:shape="rect"
         app:themeColor="#f23331a0" >
-    </com.tcl.widget.demo.widget.SlideSwitch>-->
+    </com.tcl.widget.demo.ui.widget.SlideSwitch>-->
 
 </LinearLayout>

@@ -4,25 +4,25 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <com.tcl.widget.demo.widget.MyViewGroupA
+    <com.tcl.widget.demo.ui.widget.MyViewGroupA
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:orientation="vertical"
         android:gravity="center"
         >
-        <com.tcl.widget.demo.widget.MyViewGroupB
+        <com.tcl.widget.demo.ui.widget.MyViewGroupB
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:orientation="vertical"
             android:gravity="center"
             >
-            <com.tcl.widget.demo.widget.MyButton
+            <com.tcl.widget.demo.ui.widget.MyButton
                 android:id="@+id/btn_click"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:text="click me"
                 />
-        </com.tcl.widget.demo.widget.MyViewGroupB>
+        </com.tcl.widget.demo.ui.widget.MyViewGroupB>
 
-    </com.tcl.widget.demo.widget.MyViewGroupA>
+    </com.tcl.widget.demo.ui.widget.MyViewGroupA>
 </LinearLayout>

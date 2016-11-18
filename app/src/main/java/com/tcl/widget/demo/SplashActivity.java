@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.tcl.widget.demo.container.FragmentContainerActivity;
 import com.tcl.widget.demo.service.LocalCastielService;
 import com.tcl.widget.demo.service.RemoteCastielService;
-import com.tcl.widget.demo.ui.fragment.MaterialEdittextFragment;
+import com.tcl.widget.demo.ui.fragment.MaterialEdittextFragmentA;
 
 /**
  * @author Jerry
@@ -21,21 +21,17 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //CirclProgressActivity.launch(this);
-       // CanvasActivity.launch(this);
-        //PieActivity.launch(this);
-        //FragmentContainerActivity.launch(this,CheckViewFragment.class, null);
-        //RadarActivity.launch(this);
+        //FragmentContainerActivity.launch(this,CheckViewFragmentA.class, null);
         //FragmentContainerActivity.launch(this,RadarFragment.class, null);
-        //FragmentContainerActivity.launch(this,BeizerFragment.class, null);
-        //FragmentContainerActivity.launch(this,BeizerFragment2.class, null);
+        //FragmentContainerActivity.launch(this,BeizerFragmentA.class, null);
+        //FragmentContainerActivity.launch(this,BeizerFragment2A.class, null);
         //FragmentContainerActivity.launch(this,PathBooleanFragment.class, null);
-        //FragmentContainerActivity.launch(this,PathFillTypeFragment.class, null);
-        //FragmentContainerActivity.launch(this, MatrixFragment.class, null);
-        //FragmentContainerActivity.launch(this, EventDispatchAndConsumeFragment.class, null);
-        //FragmentContainerActivity.launch(this, SlideSwitchFragment.class, null);
-        //FragmentContainerActivity.launch(this, LayoutOptimizeFragment.class, null);
-        FragmentContainerActivity.launch(this, MaterialEdittextFragment.class, null);
+        //FragmentContainerActivity.launch(this,PathFillTypeFragmentA.class, null);
+        //FragmentContainerActivity.launch(this, MatrixFragmentA.class, null);
+        //FragmentContainerActivity.launch(this, EventDispatchAndConsumeFragmentA.class, null);
+        //FragmentContainerActivity.launch(this, SlideSwitchFragmentA.class, null);
+        //FragmentContainerActivity.launch(this, LayoutOptimizeFragmentA.class, null);
+        FragmentContainerActivity.launch(this, MaterialEdittextFragmentA.class, null);
         finish();
 
         //git stash test
