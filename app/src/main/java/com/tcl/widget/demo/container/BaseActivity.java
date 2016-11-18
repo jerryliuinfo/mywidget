@@ -20,7 +20,7 @@ import java.util.Map;
  * Created by wangdan on 15-1-16.
  */
 public class BaseActivity extends AppCompatActivity {
-
+    public static final String TAG = BaseActivity.class.getSimpleName();
     private View rootView;
 
     private Toolbar mToolbar;

@@ -4,11 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
-import com.tcl.widget.demo.container.FragmentContainerActivity;
 import com.tcl.widget.demo.service.LocalCastielService;
 import com.tcl.widget.demo.service.RemoteCastielService;
-import com.tcl.widget.demo.ui.fragment.MaterialEdittextFragmentA;
 
 /**
  * @author Jerry
@@ -31,8 +30,18 @@ public class SplashActivity extends AppCompatActivity {
         //FragmentContainerActivity.launch(this, EventDispatchAndConsumeFragmentA.class, null);
         //FragmentContainerActivity.launch(this, SlideSwitchFragmentA.class, null);
         //FragmentContainerActivity.launch(this, LayoutOptimizeFragmentA.class, null);
-        FragmentContainerActivity.launch(this, MaterialEdittextFragmentA.class, null);
-        finish();
+        //FragmentContainerActivity.launch(SplashActivity.this, MaterialEdittextFragmentA.class, null);
+        setContentView(R.layout.activity_splash);
+        findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SplashActivity.this, SecondActivity.class));
+            }
+        });
+
+
+
+       // finish();
 
         //git stash test
         // 启动本地服务和远程服务
