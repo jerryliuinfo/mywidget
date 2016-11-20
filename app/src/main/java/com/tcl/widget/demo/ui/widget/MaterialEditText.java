@@ -69,7 +69,7 @@ public class MaterialEditText  extends EditText {
         overLengthColor = a.getColor(R.styleable.MaterialEditText_overLengthColor, Color.RED);
 
         labelText = a.getString(R.styleable.MaterialEditText_labelText);
-        maxCount = a.getInt(R.styleable.MaterialEditText_maxLength,20);
+        maxCount = a.getInt(R.styleable.MaterialEditText_maxLength,15);
         a.recycle();
 
         countStringBuffer = new StringBuffer();

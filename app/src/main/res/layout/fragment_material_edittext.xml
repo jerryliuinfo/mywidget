@@ -23,8 +23,6 @@
             app:maxLength = "12"
             app:labelText="用户名"
             app:labelColor="#18b4ed"
-            app:preLineColor="#18b4ed"
-            app:overlengthColor="@android:color/holo_red_light"
             android:hint="用户名"
             android:singleLine="true"
             android:layout_marginTop="10dp"

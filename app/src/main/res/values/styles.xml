@@ -8,4 +8,19 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="healthyview_style">
+        <item name="android:paddingBottom">32dp</item>
+        <item name="android:paddingLeft">60dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingRight">32dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">260dp</item>
+        <item name="lineWidth">2dp</item>
+        <item name="android:background">#FFFFFF</item>
+        <item name="coordinatesLineWidth">2px</item>
+        <item name="lineColor">#6acfed</item>
+        <item name="maxcircleColor">#6acfed</item>
+        <item name="coordinatesTextSize">11sp</item>
+        <item name="coordinatesTextColor">#808080</item>
+    </style>
 </resources>
