@@ -7,10 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.tcl.widget.demo.container.FragmentContainerActivity;
-import com.tcl.widget.demo.notification.NotificationManagerWrapper;
 import com.tcl.widget.demo.service.LocalCastielService;
 import com.tcl.widget.demo.service.RemoteCastielService;
-import com.tcl.widget.demo.ui.fragment.MaterialEdittextFragmentA;
+import com.tcl.widget.demo.ui.fragment.HealthTableFragment;
 
 /**
  * @author Jerry
@@ -33,7 +32,7 @@ public class SplashActivity extends AppCompatActivity {
         //FragmentContainerActivity.launch(this, EventDispatchAndConsumeFragmentA.class, null);
         //FragmentContainerActivity.launch(this, SlideSwitchFragmentA.class, null);
         //FragmentContainerActivity.launch(this, LayoutOptimizeFragmentA.class, null);
-        FragmentContainerActivity.launch(SplashActivity.this, MaterialEdittextFragmentA.class, null);
+        //FragmentContainerActivity.launch(SplashActivity.this, MaterialEdittextFragmentA.class, null);
         setContentView(R.layout.activity_splash);
         findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,9 +40,8 @@ public class SplashActivity extends AppCompatActivity {
                 //startActivity(new Intent(SplashActivity.this, SecondActivity.class));
             }
         });
-        NotificationManagerWrapper.show(this);
-
-
+        FragmentContainerActivity.launch(SplashActivity.this, HealthTableFragment.class, null);
+        //NotificationManagerWrapper.show(this);
         finish();
 
         //git stash test
