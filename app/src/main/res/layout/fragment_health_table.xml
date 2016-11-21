@@ -1,26 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
             android:layout_margin="16dp"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:gravity="center_horizontal"
     >
-    <!-- <item name="android:paddingBottom">32dp</item>
-    <item name="android:paddingLeft">60dp</item>
-    <item name="android:paddingTop">8dp</item>
-    <item name="android:paddingRight">32dp</item>
-    <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">260dp</item>
-    <item name="lineWidth">2dp</item>
-    <item name="android:background">#FFFFFF</item>
-    <item name="coordinatesLineWidth">2px</item>
-    <item name="lineColor">#6acfed</item>
-    <item name="maxcircleColor">#6acfed</item>
-    <item name="coordinatesTextSize">11sp</item>
-    <item name="coordinatesTextColor">#808080</item>-->
-    <com.tcl.widget.demo.ui.widget.guolin.HealthTableView
+
+    <!--<com.tcl.widget.demo.ui.widget.guolin.HealthTableView
         style="@style/healthyview_style"
         app:tableType="heartrate"
-    />
-</LinearLayout>
+    />-->
+    <Button
+        android:id="@+id/btn_enable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="立即加速"
+        />
+
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_centerInParent="true"
+        android:src="@mipmap/yifei"
+        />
+
+    <Button
+        android:id="@+id/btn_move"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/icon"
+        android:text="Move"
+        />
+</RelativeLayout>

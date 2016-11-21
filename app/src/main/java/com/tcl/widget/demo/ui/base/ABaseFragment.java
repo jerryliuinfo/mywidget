@@ -18,6 +18,7 @@ import com.tcl.widget.demo.container.BaseActivity;
  */
 
 public abstract class ABaseFragment extends Fragment {
+    public static final String TAG = ABaseFragment.class.getSimpleName();
     protected ViewGroup rootView;// 根视图
     protected Context mContext;
     @Override
