@@ -31,10 +31,11 @@ public class HealthTableFragment extends ABaseFragment {
         imageView = (ImageView) rootView.findViewById(R.id.icon);
         Button btnMove = (Button) rootView.findViewById(R.id.btn_move);
         final Rect rect = new Rect();
+        final Rect rect2 = new Rect();
         btnMove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ObjectAnimator animator = ObjectAnimator.ofFloat(imageView, "translationY", rect.bottom);
+                ObjectAnimator animator = ObjectAnimator.ofFloat(imageView, "translationY",0, rect.bottom - rect2.bottom);
                 animator.setDuration(5000);
                 animator.start();
                 animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
@@ -47,6 +48,16 @@ public class HealthTableFragment extends ABaseFragment {
         });
 
         final Button btnEnable = (Button) rootView.findViewById(R.id.btn_enable);
+        imageView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+            @Override
+            public boolean onPreDraw() {
+
+                imageView.getGlobalVisibleRect(rect2);
+                NLog.d(TAG, "rect2 top = %d, rect2 bottom = %d", rect2.top,rect2.bottom);
+                return true;
+            }
+        });
+
 
         btnEnable.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
             @Override
