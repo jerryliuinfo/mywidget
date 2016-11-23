@@ -169,7 +169,6 @@ public class HealthTableView extends View {
         int yendPointY = getPaddingTop();
         canvas.drawLine(getPaddingLeft() - 10, getPaddingTop() + 20, yendPointX,yendPointY, xyPaint);
         canvas.drawLine(getPaddingLeft() + 10, getPaddingTop() + 20, yendPointX,yendPointY, xyPaint);
-
     }
 
 
