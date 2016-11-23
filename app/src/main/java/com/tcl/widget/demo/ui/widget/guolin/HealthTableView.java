@@ -94,15 +94,19 @@ public class HealthTableView extends View {
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr){
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.HealthTable);
+        mBgColor = array.getColor(HealthTable_bgColor, Color.WHITE);
+
         mCoordinatesLineWidth = array.getDimensionPixelSize(R.styleable.HealthTable_coordinatesLineWidth, 2);
         mCoordinatesTextColor = array.getColor(R.styleable.HealthTable_coordinatesTextColor,Color.BLACK);
         mCoordinatesTextSize = array.getDimensionPixelSize(R.styleable.HealthTable_coordinatesTextSize, DisplayUtil.sp2px(11));
+
         mLineColor = array.getColor(HealthTable_lineColor, Color.BLUE);
-        mCircleradius = array.getDimensionPixelSize(R.styleable.HealthTable_averageCircleradius,
-               DisplayUtil.dp2px(10));
-        mBgColor = array.getColor(HealthTable_bgColor, Color.WHITE);
         mLineWidth = array.getDimensionPixelSize(R.styleable.HealthTable_lineWidth,
                 DisplayUtil.dp2px(2));
+
+        mCircleradius = array.getDimensionPixelSize(R.styleable.HealthTable_averageCircleradius,
+               DisplayUtil.dp2px(10));
+
         mMaxcircleColor = array.getColor(R.styleable.HealthTable_maxcircleColor, Color.GREEN);
         mMincircleColor = array.getColor(R.styleable.HealthTable_mincircleColor, Color.WHITE);
         mDrawType = array.getString(R.styleable.HealthTable_tableType);
@@ -119,9 +123,27 @@ public class HealthTableView extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-         mWidth = MeasureSpec.getSize(widthMeasureSpec);
          mHeight = MeasureSpec.getSize(heightMeasureSpec);
         NLog.d(TAG, "mWidth = %d, mHeith = %d", mWidth,mHeight);
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
+        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
+        int heightSize = MeasureSpec.getSize(heightMeasureSpec);
+        if (widthMode == MeasureSpec.EXACTLY){
+            mWidth = widthSize;
+        }else {
+            mWidth = 300;
+        }
+        if (heightMode == MeasureSpec.EXACTLY){
+            mHeight = heightSize;
+        }else {
+            mHeight = (mWidth * 3) / 5;
+        }
+        setMeasuredDimension(mWidth,mHeight);
+
+
+
+
     }
 
     @Override
@@ -134,9 +156,23 @@ public class HealthTableView extends View {
     private void drawCoodinates(Canvas canvas){
         //画x方向轴
         canvas.drawLine(getPaddingLeft(), mHeight - getPaddingBottom(), mWidth - getPaddingRight(),mHeight - getPaddingBottom(), xyPaint);
+       //画x轴箭头
+        int endPointX = mWidth - getPaddingRight();
+        int endPointY = mHeight - getPaddingBottom();
+        canvas.drawLine(mWidth - getPaddingRight() - 20, mHeight - getPaddingBottom() - 10, endPointX,endPointY, xyPaint);
+        canvas.drawLine(mWidth - getPaddingRight() - 20, mHeight - getPaddingBottom() + 10, endPointX,endPointY, xyPaint);
+
         //画y方向轴
-        canvas.drawLine(getPaddingLeft(),mHeight - getPaddingBottom(), getPaddingLeft(),getPaddingTop(),xyPaint);
+        canvas.drawLine(getPaddingLeft(), mHeight - getPaddingBottom(), getPaddingLeft(),getPaddingTop(), xyPaint);
+        //画y轴箭头
+        int yendPointX = getPaddingLeft();
+        int yendPointY = getPaddingTop();
+        canvas.drawLine(getPaddingLeft() - 10, getPaddingTop() + 20, yendPointX,yendPointY, xyPaint);
+        canvas.drawLine(getPaddingLeft() + 10, getPaddingTop() + 20, yendPointX,yendPointY, xyPaint);
+
     }
+
+
 
 
 
