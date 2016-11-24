@@ -129,6 +129,7 @@ public class HealthTableView extends View {
         textBound = new Rect();
 
         weeks = new String[]{"01","02","03","04","05","06","07","08","09"};
+        yArray = new int[]{10,20,30,40,50,60,70,80,90,100};
         textBound = new Rect();
 
 
@@ -155,6 +156,7 @@ public class HealthTableView extends View {
         }
 
         xDifference = (mWidth - getPaddingLeft() - getPaddingRight() - 40 ) / (weeks.length - 1);
+        yDifference = (mHeight - getPaddingTop() - getPaddingBottom() - 40) / (yArray.length - 1);
         setMeasuredDimension(mWidth,mHeight);
     }
 
@@ -163,6 +165,7 @@ public class HealthTableView extends View {
         super.onDraw(canvas);
         drawCoodinates(canvas);
         drawXCoordinateValues(canvas);
+        drawYCoordinateValues(canvas);
     }
 
 
@@ -186,6 +189,7 @@ public class HealthTableView extends View {
 
     private String[] weeks;
     private int xDifference;
+    private int yDifference;
     private void drawXCoordinateValues(Canvas canvas){
         for (int i = 0; i < weeks.length; i++) {
             xyPaint.getTextBounds(weeks[i],0,weeks[i].length(), textBound);
@@ -195,9 +199,14 @@ public class HealthTableView extends View {
         }
     }
 
-
+    int []yArray;
     private void drawYCoordinateValues(Canvas canvas){
-
+        for (int i = 0; i < yArray.length; i++) {
+            textPaint.getTextBounds(String.valueOf(yArray[i]),0,String.valueOf(yArray[i]).length(), textBound);
+            canvas.drawLine(getPaddingLeft(),mHeight - getPaddingBottom() - i * yDifference,
+                    getPaddingLeft() + 10, mHeight - getPaddingBottom() - i * yDifference, xyPaint);
+            canvas.drawText(String.valueOf(yArray[i]), getPaddingLeft() - 30, mHeight - getPaddingBottom() - i * yDifference - textBound.height() / 2, textPaint);
+        }
     }
 
 
