@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -74,6 +75,8 @@ public class HealthTableView extends View {
      */
     private int mMaxcircleColor;
 
+    private Rect textBound;
+
 
 
     public HealthTableView(Context context) {
@@ -91,6 +94,7 @@ public class HealthTableView extends View {
 
 
     private Paint xyPaint;
+    private Paint textPaint;
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr){
         TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.HealthTable);
@@ -117,6 +121,16 @@ public class HealthTableView extends View {
         xyPaint.setColor(mCoordinatesTextColor);
         xyPaint.setStyle(Paint.Style.FILL);
 
+        textPaint = new Paint();
+        textPaint.setAntiAlias(true);
+        textPaint.setColor(mCoordinatesTextColor);
+        textPaint.setTextSize(mCoordinatesTextSize);
+        textPaint.setStyle(Paint.Style.STROKE);
+        textBound = new Rect();
+
+        weeks = new String[]{"01","02","03","04","05","06","07","08","09"};
+        textBound = new Rect();
+
 
     }
 
@@ -139,17 +153,16 @@ public class HealthTableView extends View {
         }else {
             mHeight = (mWidth * 3) / 5;
         }
+
+        xDifference = (mWidth - getPaddingLeft() - getPaddingRight() - 40 ) / (weeks.length - 1);
         setMeasuredDimension(mWidth,mHeight);
-
-
-
-
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         drawCoodinates(canvas);
+        drawXCoordinateValues(canvas);
     }
 
 
@@ -171,8 +184,21 @@ public class HealthTableView extends View {
         canvas.drawLine(getPaddingLeft() + 10, getPaddingTop() + 20, yendPointX,yendPointY, xyPaint);
     }
 
+    private String[] weeks;
+    private int xDifference;
+    private void drawXCoordinateValues(Canvas canvas){
+        for (int i = 0; i < weeks.length; i++) {
+            xyPaint.getTextBounds(weeks[i],0,weeks[i].length(), textBound);
+            canvas.drawLine(getPaddingLeft() + i * xDifference,mHeight - getPaddingBottom() - 10,
+                    getPaddingLeft() + i * xDifference, mHeight - getPaddingBottom(), xyPaint);
+            canvas.drawText(weeks[i], getPaddingLeft() + i * xDifference - textBound.width() / 2, mHeight - getPaddingBottom() + 30, textPaint);
+        }
+    }
 
 
+    private void drawYCoordinateValues(Canvas canvas){
+
+    }
 
 
 }
