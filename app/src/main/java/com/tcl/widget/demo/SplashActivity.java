@@ -1,15 +1,12 @@
 package com.tcl.widget.demo;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Html;
 import android.view.View;
 import android.widget.TextView;
 
-import com.tcl.widget.demo.service.LocalCastielService;
-import com.tcl.widget.demo.service.RemoteCastielService;
+import com.tcl.widget.demo.ui.widget.DrawTextImageView;
 
 /**
  * @author Jerry
@@ -20,6 +17,7 @@ import com.tcl.widget.demo.service.RemoteCastielService;
 
 public class SplashActivity extends AppCompatActivity {
     TextView btn;
+    DrawTextImageView drawTextImageView;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,8 +34,6 @@ public class SplashActivity extends AppCompatActivity {
         //FragmentContainerActivity.launch(SplashActivity.this, MaterialEdittextFragmentA.class, null);
         setContentView(R.layout.activity_splash);
         btn = (TextView) findViewById(R.id.btn);
-        CharSequence charSequence = Html.fromHtml(getResources().getString(R.string.uninstall_rarely_unused_app));
-        btn.setText(charSequence);
         findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,11 +44,7 @@ public class SplashActivity extends AppCompatActivity {
         //NotificationManagerWrapper.show(this);
        // finish();
 
-        //git stash test
-        // 启动本地服务和远程服务
-        startService(new Intent(this, LocalCastielService.class));
-        startService(new Intent(this, RemoteCastielService.class));
-        TextView textView;
-        //git log
+        drawTextImageView = (DrawTextImageView) findViewById(R.id.drawTextImageView);
+        drawTextImageView.setDrawText("48℃");
     }
 }

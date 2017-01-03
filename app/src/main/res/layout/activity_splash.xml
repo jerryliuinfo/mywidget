@@ -10,4 +10,21 @@
         android:layout_height="wrap_content"
         android:text="onClick"
         />
+    <ImageView
+        android:id="@+id/iv_gif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        >
+        <com.tcl.widget.demo.ui.widget.DrawTextImageView
+            android:id="@+id/drawTextImageView"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            />
+    </LinearLayout>
+
 </LinearLayout>

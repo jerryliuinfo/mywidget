@@ -71,6 +71,8 @@
     <color name="progress_bg_color">#ffe3e3e5</color>
     <color name="progress_start_color">#fff2a670</color>
 
-
+    <!--常驻通知栏-->
+    <color name="quick_notification_bar_divider">@color/red</color>
+    <color name="quick_notification_bar_text_color">@color/black</color>
 
 </resources>
