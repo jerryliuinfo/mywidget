@@ -2,10 +2,13 @@ package com.tcl.widget.demo;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
 
+import com.tcl.widget.demo.container.BaseActivity;
+import com.tcl.widget.demo.container.FragmentContainerActivity;
+import com.tcl.widget.demo.ui.fragment.MenuFragment;
 import com.tcl.widget.demo.ui.widget.DrawTextImageView;
 
 /**
@@ -15,7 +18,7 @@ import com.tcl.widget.demo.ui.widget.DrawTextImageView;
  * @copyright TCL-MIG
  */
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends BaseActivity {
     TextView btn;
     DrawTextImageView drawTextImageView;
     @Override
@@ -41,10 +44,23 @@ public class SplashActivity extends AppCompatActivity {
             }
         });
         //FragmentContainerActivity.launch(SplashActivity.this, HealthTableFragment.class, null);
-        //NotificationManagerWrapper.show(this);
-       // finish();
-
+        FragmentContainerActivity.launch(SplashActivity.this, MenuFragment.class, null);
+        finish();
+        getMDActionBar().setDisplayHomeAsUpEnabled(true);
+        getMDActionBar().setHomeButtonEnabled(true);
         drawTextImageView = (DrawTextImageView) findViewById(R.id.drawTextImageView);
         drawTextImageView.setDrawText("48℃");
+    }
+
+   /* @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main,menu);
+        return false;
+    }*/
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main,menu);
+        return true;
     }
 }

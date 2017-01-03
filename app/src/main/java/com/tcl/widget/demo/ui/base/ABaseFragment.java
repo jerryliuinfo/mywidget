@@ -70,4 +70,13 @@ public abstract class ABaseFragment extends Fragment {
      */
     protected void layoutInit(LayoutInflater inflater, Bundle savedInstanceSate) {
     }
+
+    /**
+     * 返回按键被点击了
+     *
+     * @return
+     */
+    public boolean onBackClick() {
+        return false;
+    }
 }
