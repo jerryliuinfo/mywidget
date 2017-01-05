@@ -1,15 +1,22 @@
 package com.tcl.widget.demo;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.tcl.widget.demo.container.BaseActivity;
 import com.tcl.widget.demo.container.FragmentContainerActivity;
-import com.tcl.widget.demo.ui.fragment.MenuFragment;
+import com.tcl.widget.demo.ui.fragment.CustomDrableFragment;
 import com.tcl.widget.demo.ui.widget.DrawTextImageView;
+
+import static android.widget.Toast.makeText;
 
 /**
  * @author Jerry
@@ -41,15 +48,19 @@ public class SplashActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 //startActivity(new Intent(SplashActivity.this, SecondActivity.class));
+                showDialog(DIALOG_PAUSED_ID);
             }
         });
         //FragmentContainerActivity.launch(SplashActivity.this, HealthTableFragment.class, null);
-        FragmentContainerActivity.launch(SplashActivity.this, MenuFragment.class, null);
-        finish();
+        FragmentContainerActivity.launch(SplashActivity.this, CustomDrableFragment.class, null);
+       // finish();
         getMDActionBar().setDisplayHomeAsUpEnabled(true);
         getMDActionBar().setHomeButtonEnabled(true);
         drawTextImageView = (DrawTextImageView) findViewById(R.id.drawTextImageView);
         drawTextImageView.setDrawText("48℃");
+
+
+
     }
 
    /* @Override
@@ -62,5 +73,57 @@ public class SplashActivity extends BaseActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main,menu);
         return true;
+    }
+
+    static final int DIALOG_PAUSED_ID = 0;
+    static final int DIALOG_GAMEOVER_ID = 1;
+    @Nullable
+    @Override
+    protected Dialog onCreateDialog(int id, Bundle args) {
+        Dialog dialog = null;
+        switch (id){
+            case DIALOG_PAUSED_ID:
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("Pause").setIcon(R.drawable.ic_launcher).setMessage("Pause it").setPositiveButton("确定", new DialogInterface.OnClickListener() {
+
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast toast = Toast.makeText(SplashActivity.this, "onClicke pause",Toast.LENGTH_SHORT);
+                        toast.setGravity(Gravity.TOP|Gravity.LEFT, 0,0);
+                        toast.show();
+                    }
+                }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //dialog.dismiss();
+                        removeDialog(DIALOG_PAUSED_ID);
+                    }
+                });
+                dialog = builder.create();
+
+                break;
+            case DIALOG_GAMEOVER_ID:
+                AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+                builder2.setTitle("Game Over").setMessage("Game Over").setPositiveButton("确定", new DialogInterface.OnClickListener() {
+
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        makeText(SplashActivity.this, "onClicke Game Over",Toast.LENGTH_SHORT).show();
+                    }
+                }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                dialog = builder2.create();
+                break;
+            default:
+                break;
+
+        }
+        return  dialog;
     }
 }

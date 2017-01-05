@@ -3,13 +3,14 @@ package com.tcl.widget.demo.ui.widget;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.Rect;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 
 import com.tcl.widget.demo.R;
 import com.tcl.widget.demo.uti.NLog;
+import com.tcl.widget.demo.uti.ViewUtil;
 
 /**
  * @author Jerry
@@ -125,14 +126,10 @@ public class DrawTextImageView extends ImageView {
         int mCenterX = getMeasuredWidth() / 2;
         int mCenterY = getMeasuredHeight() / 2;
 
-        Rect rect = new Rect();
-        paint.getTextBounds(textString, 0, textString.length(),rect);
-        int startX = mCenterX - rect.width() / 2;
+        int startX = mCenterX - ViewUtil.getTextWidth(paint,textString) / 2;
         NLog.d(TAG, "mCenterX = %s, mCenterY = %s", mCenterX,mCenterY);
-        if (!textString.equals("")) {
-            Paint.FontMetrics fontMetrics = paint.getFontMetrics();
-            float fontHeight = fontMetrics.bottom - fontMetrics.top;
-            float baseY = getMeasuredHeight() - (getMeasuredHeight() - fontHeight ) /2 -fontMetrics.bottom;
+        if (!TextUtils.isEmpty(textString)) {
+            float baseY = ViewUtil.geTexttCenterY(paint, getMeasuredHeight());
             canvas.drawText(textString, startX,baseY, paint);
         }
 
