@@ -6,8 +6,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 
 import com.tcl.widget.demo.R;
-import com.tcl.widget.demo.container.BaseActivity;
 import com.tcl.widget.demo.ui.base.ABaseFragment;
+import com.tcl.widget.demo.ui.base.BaseActivity;
 
 /**
  * @author Jerry

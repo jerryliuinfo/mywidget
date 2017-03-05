@@ -33,8 +33,8 @@ public class CheckViewFragmentA extends ABaseFragment {
     @Override
     protected void layoutInit(LayoutInflater inflater, Bundle savedInstanceSate) {
         super.layoutInit(inflater, savedInstanceSate);
-        checkView = (CheckView) rootView.findViewById(R.id.check_view);
-        mBtnSwitch = (Button) rootView.findViewById(R.id.btn_switch);
+        checkView = (CheckView) findViewById(R.id.check_view);
+        mBtnSwitch = (Button) findViewById(R.id.btn_switch);
         mBtnSwitch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

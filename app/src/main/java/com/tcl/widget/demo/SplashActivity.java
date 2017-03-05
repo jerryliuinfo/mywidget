@@ -11,9 +11,9 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.tcl.widget.demo.container.BaseActivity;
 import com.tcl.widget.demo.container.FragmentContainerActivity;
-import com.tcl.widget.demo.ui.fragment.CustomDrableFragment;
+import com.tcl.widget.demo.ui.base.BaseActivity;
+import com.tcl.widget.demo.ui.fragment.CoordinateLayoutFragment;
 import com.tcl.widget.demo.ui.widget.DrawTextImageView;
 
 import static android.widget.Toast.makeText;
@@ -52,7 +52,7 @@ public class SplashActivity extends BaseActivity {
             }
         });
         //FragmentContainerActivity.launch(SplashActivity.this, HealthTableFragment.class, null);
-        FragmentContainerActivity.launch(SplashActivity.this, CustomDrableFragment.class, null);
+        FragmentContainerActivity.launch(SplashActivity.this, CoordinateLayoutFragment.class, null);
        // finish();
         getMDActionBar().setDisplayHomeAsUpEnabled(true);
         getMDActionBar().setHomeButtonEnabled(true);
