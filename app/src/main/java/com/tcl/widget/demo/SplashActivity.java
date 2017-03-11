@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.tcl.widget.demo.container.FragmentContainerActivity;
 import com.tcl.widget.demo.ui.base.BaseActivity;
-import com.tcl.widget.demo.ui.fragment.CoordinateLayoutFragment;
+import com.tcl.widget.demo.ui.fragment.MiClockFragment;
 import com.tcl.widget.demo.ui.widget.DrawTextImageView;
 
 import static android.widget.Toast.makeText;
@@ -52,7 +52,8 @@ public class SplashActivity extends BaseActivity {
             }
         });
         //FragmentContainerActivity.launch(SplashActivity.this, HealthTableFragment.class, null);
-        FragmentContainerActivity.launch(SplashActivity.this, CoordinateLayoutFragment.class, null);
+        //FragmentContainerActivity.launch(SplashActivity.this, CoordinateLayoutFragment.class, null);
+        FragmentContainerActivity.launch(SplashActivity.this, MiClockFragment.class, null);
        // finish();
         getMDActionBar().setDisplayHomeAsUpEnabled(true);
         getMDActionBar().setHomeButtonEnabled(true);
@@ -61,9 +62,13 @@ public class SplashActivity extends BaseActivity {
 
 
 
+
+
     }
 
-   /* @Override
+
+
+    /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main,menu);
         return false;

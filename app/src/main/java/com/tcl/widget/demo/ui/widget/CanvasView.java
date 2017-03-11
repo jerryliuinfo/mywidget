@@ -123,8 +123,8 @@ public class CanvasView extends View {
         path2.lineTo(100,100);
 
         RectF rect = new RectF(0,0,150,150);
-        //path2.addArc(rect, 0 ,270);
-        //path2.arcTo(rect,0,270,true);
+        //path2.addArc(mTextRect, 0 ,270);
+        //path2.arcTo(mTextRect,0,270,true);
         path2.arcTo(rect,0,270);
 
         canvas.drawPath(path2, mPaint);

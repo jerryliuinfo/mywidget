@@ -75,4 +75,9 @@
     <color name="quick_notification_bar_divider">@color/red</color>
     <color name="quick_notification_bar_text_color">@color/black</color>
 
+
+    <color name="miclock_dark">#80ffffff</color>
+    <color name="miclock_light">#ffffff</color>
+    <color name="miclock_scale_line">#237EAD</color>
+
 </resources>
