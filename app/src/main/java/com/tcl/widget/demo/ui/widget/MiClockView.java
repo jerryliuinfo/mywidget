@@ -246,6 +246,8 @@ public class MiClockView extends View {
         //画背景色刻度线
         mCanvas.save();
 
+
+
         for (int i = 0; i < 200; i++) {
             mCanvas.drawLine(getWidth() / 2, mPaddingTop + mScaleLength + mTextRect.height() / 2,
                     getWidth() / 2, mPaddingTop + 2 * mScaleLength + mTextRect.height() / 2, mScaleLinePaint);
