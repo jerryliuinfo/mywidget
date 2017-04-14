@@ -119,5 +119,37 @@ public class BezierView extends View {
 
     }
 
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        setMeasuredDimension(measureWidth(widthMeasureSpec), measureHeight(heightMeasureSpec));
+
+    }
+
+    private int measureWidth(int widthMeasureSpec){
+        int result = 500;
+        int specMode = MeasureSpec.getMode(widthMeasureSpec);
+        int specSize = MeasureSpec.getSize(widthMeasureSpec);
+        if (specMode == MeasureSpec.EXACTLY){
+            result = specSize;
+        }else if (specMode == MeasureSpec.AT_MOST){
+            result = specSize;
+        }
+        return result;
+    }
+
+    private int measureHeight(int heightMeasureSpec){
+        int result = 500;
+        int specMode = MeasureSpec.getMode(heightMeasureSpec);
+        int specSize = MeasureSpec.getSize(heightMeasureSpec);
+        if (specMode == MeasureSpec.EXACTLY){
+            result = specSize;
+        }else if (specMode == MeasureSpec.AT_MOST){
+            result = specSize;
+        }
+        return result;
+    }
+
+
 
 }

@@ -11,9 +11,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.tcl.widget.demo.container.FragmentContainerActivity;
 import com.tcl.widget.demo.ui.base.BaseActivity;
-import com.tcl.widget.demo.ui.fragment.WatchBordFragment;
 import com.tcl.widget.demo.ui.widget.DrawTextImageView;
 
 import static android.widget.Toast.makeText;
@@ -54,15 +52,12 @@ public class SplashActivity extends BaseActivity {
         //FragmentContainerActivity.launch(SplashActivity.this, HealthTableFragment.class, null);
         //FragmentContainerActivity.launch(SplashActivity.this, CoordinateLayoutFragment.class, null);
         //FragmentContainerActivity.launch(SplashActivity.this, MiClockFragment.class, null);
-        FragmentContainerActivity.launch(SplashActivity.this, WatchBordFragment.class, null);
+        //FragmentContainerActivity.launch(SplashActivity.this, WatchBordFragment.class, null);
        // finish();
         getMDActionBar().setDisplayHomeAsUpEnabled(true);
         getMDActionBar().setHomeButtonEnabled(true);
         drawTextImageView = (DrawTextImageView) findViewById(R.id.drawTextImageView);
         drawTextImageView.setDrawText("48℃");
-
-
-
 
 
     }
