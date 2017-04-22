@@ -255,8 +255,8 @@ public class MainWhiteListEntryView extends View {
 
      private void drawShortLine(Canvas canvas){
          if (mHorizentalShortLineEndX != 0){
-             mHorizontalShortLineY = mHorizontalLongLineY + ResUtil.dip2px(mLinePadding) + mLinePaint.getStrokeWidth() / 2;
-             thirdPoint.y = (int) (mHorizontalShortLineY +ResUtil.dip2px(mLinePadding));
+             mHorizontalShortLineY = mHorizontalLongLineY + ResUtil.dip2px(mLineTopPadding) + mLinePaint.getStrokeWidth() / 2;
+             thirdPoint.y = (int) (mHorizontalShortLineY +ResUtil.dip2px(mLineTopPadding));
              canvas.drawLine(mHorizentalLineStartX, mHorizontalShortLineY, mHorizentalShortLineEndX, mHorizontalShortLineY, mLinePaint);
          }
 
