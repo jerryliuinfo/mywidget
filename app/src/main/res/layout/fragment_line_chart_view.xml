@@ -4,7 +4,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
             android:gravity="center"
-              android:background="#D8D8D8"
+              android:background="#404660"
     >
     <Button
         android:id="@+id/btn"
@@ -13,28 +13,7 @@
         android:text="onClick"
         />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/blue"
-        android:visibility="gone"
 
-        >
-        <com.tcl.widget.demo.ui.widget.LineChartView
-            android:layout_width="wrap_content"
-            android:layout_height="300dp"
-
-            />
-    </LinearLayout>
-    <com.tcl.widget.demo.ui.widget.CustomTextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:padding="30dp"
-        android:text="Hello world"
-        android:visibility="gone"
-
-        />
     <com.tcl.widget.demo.ui.widget.MainWhiteListEntryView
         android:id="@+id/main_white_list"
         android:layout_width="24dp"
