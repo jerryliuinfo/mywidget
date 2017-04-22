@@ -6,12 +6,7 @@
             android:gravity="center"
               android:background="#404660"
     >
-    <Button
-        android:id="@+id/btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="onClick"
-        />
+
 
 
     <com.tcl.widget.demo.ui.widget.MainWhiteListEntryView
@@ -22,6 +17,38 @@
         android:paddingRight="4dp"
         android:paddingTop="2dp"
         android:paddingBottom="2dp"
+        android:visibility="gone"
         />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        >
+        <com.tcl.widget.demo.ui.widget.hero.ViewMeasure
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@color/red"
+            />
+    </LinearLayout>
+    <com.tcl.widget.demo.ui.widget.hero.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Hello World"
+        android:textColor="@color/red"
+        android:visibility="gone"
+        />
+    <com.tcl.widget.demo.ui.widget.hero.ShaderView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Haha, Hello World"
+        android:visibility="gone"
+        />
+    <com.tcl.widget.demo.ui.widget.hero.CircleView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:padding="20dp"
+        />
+
 
 </LinearLayout>

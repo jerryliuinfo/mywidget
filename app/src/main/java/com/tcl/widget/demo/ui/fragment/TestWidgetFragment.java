@@ -14,6 +14,10 @@ import com.tcl.widget.demo.ui.widget.MainWhiteListEntryView;
  */
 
 public class TestWidgetFragment extends ABaseFragment {
+
+
+
+
     private Button btn;
     @Override
     protected int inflateContentView() {
