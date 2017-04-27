@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.tcl.widget.demo.uti.ViewUtil;
+import com.tcl.widget.demo.uti.view.ViewUtil;
 
 /**
  * Created by jerryliu on 2017/4/22.

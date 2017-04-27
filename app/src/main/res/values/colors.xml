@@ -80,4 +80,15 @@
     <color name="miclock_light">#ffffff</color>
     <color name="miclock_scale_line">#237EAD</color>
 
+
+
+    <color name="boostengine_frame_circle">#747E93</color>
+
+
+    <color name="boostengine_ring_start_color">#00000000</color>
+    <color name="boostengine_ring_end_color">#FFFFFF</color>
+
+    <color name="boostengine_circle_top">#1fc5ff</color>
+    <color name="boostengine_circle_bottom">#2473f9</color>
+
 </resources>

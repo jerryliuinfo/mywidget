@@ -1,4 +1,4 @@
-package com.tcl.widget.demo.uti;
+package com.tcl.widget.demo.uti.view;
 
 import android.graphics.Paint;
 import android.graphics.Rect;

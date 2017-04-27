@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import com.tcl.widget.demo.R;
 import com.tcl.widget.demo.ui.base.ABaseFragment;
-import com.tcl.widget.demo.ui.widget.MainWhiteListEntryView;
+import com.tcl.widget.demo.ui.widget.BoostView;
 
 /**
  * Created by jerryliu on 2017/4/14.
@@ -28,14 +28,14 @@ public class TestWidgetFragment extends ABaseFragment {
     protected void layoutInit(LayoutInflater inflater, Bundle savedInstanceSate) {
         super.layoutInit(inflater, savedInstanceSate);
         btn = (Button) findViewById(R.id.btn);
-        final MainWhiteListEntryView view = (MainWhiteListEntryView) findViewById(R.id.main_white_list);
-
+        final BoostView boostView = (BoostView) findViewById(R.id.boost_view);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                view.setAnimDuration(200);
-                view.startAnimation(0);
+                boostView.startAnim();
             }
         });
+
+
     }
 }

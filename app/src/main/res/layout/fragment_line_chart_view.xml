@@ -6,7 +6,12 @@
             android:gravity="center"
               android:background="#404660"
     >
-
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="onClick"
+        />
 
 
     <com.tcl.widget.demo.ui.widget.MainWhiteListEntryView
@@ -48,7 +53,20 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:padding="20dp"
+        android:visibility="gone"
         />
+
+    <com.tcl.widget.demo.ui.widget.hero.VolumnView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:visibility="gone"
+        />
+    <com.tcl.widget.demo.ui.widget.BoostView
+        android:id="@+id/boost_view"
+        android:layout_width="135dp"
+        android:layout_height="135dp"/>
 
 
 </LinearLayout>
