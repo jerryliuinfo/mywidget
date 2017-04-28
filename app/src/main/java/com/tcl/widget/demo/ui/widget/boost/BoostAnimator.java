@@ -1,4 +1,4 @@
-package com.tcl.widget.demo.ui.widget;
+package com.tcl.widget.demo.ui.widget.boost;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -6,8 +6,6 @@ import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-
-import com.tcl.widget.demo.ui.widget.boost.FirstBitLatorSmallInterceptor;
 
 /**
  * Created by jerryliu on 2017/4/28.

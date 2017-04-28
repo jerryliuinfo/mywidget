@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import com.tcl.widget.demo.R;
 import com.tcl.widget.demo.ui.base.ABaseFragment;
-import com.tcl.widget.demo.ui.widget.BoostAnimatorView;
+import com.tcl.widget.demo.ui.widget.boost.BoostAnimatorView;
 
 /**
  * Created by jerryliu on 2017/4/14.

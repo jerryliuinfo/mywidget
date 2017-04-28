@@ -1,6 +1,8 @@
-package com.tcl.widget.demo.ui.widget;
+package com.tcl.widget.demo.ui.widget.boost;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.support.annotation.Nullable;
@@ -16,6 +18,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created by jerryliu on 2017/4/28.
@@ -38,6 +42,7 @@ public class IconGatherView extends View {
 
 
     private List<BoostAnimator> mBubbleAnims = new ArrayList<>();
+    private List<BoostAnimator> mIconAnims = new ArrayList<>();
 
     public IconGatherView(Context context) {
         super(context,null);
@@ -77,13 +82,21 @@ public class IconGatherView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         generateBubble();
+
         clearBubbles();
-        NLog.d(TAG, "onDraw mBubbleAnims.size() = %s", mBubbleAnims.size());
         if (mBubbleAnims.size() > 0){
             for (BoostAnimator bubbleAnimator: mBubbleAnims){
                 bubbleAnimator.onDraw(canvas, mPaint);
             }
         }
+        synchronized (mIconAnims){
+            if (mIconAnims.size() > 0){
+                for (BoostAnimator animator: mIconAnims){
+                    animator.onDraw(canvas,mPaint);
+                }
+            }
+        }
+
     }
 
     private void clearBubbles(){
@@ -102,11 +115,23 @@ public class IconGatherView extends View {
     private void generateBubble(){
         float value = mRandom.nextFloat();
         if (value >= 1 - POP_FACTOR){
-            BoostAnimator boostAnmiator = new BubbleView(mBubbleRadis);
+            BoostAnimator boostAnmiator = new BubbleAnimView(mBubbleRadis);
             resetBoostAnim(boostAnmiator);
             mBubbleAnims.add(boostAnmiator);
         }
     }
+
+    private void generateIcon(Bitmap bitmap){
+        float value = mRandom.nextFloat();
+        if (value >= 1 - POP_FACTOR){
+            IconAnimView iconAnimView = new IconAnimView();
+            resetBoostAnim(iconAnimView);
+            iconAnimView.setBitmap(bitmap);
+            mIconAnims.add(iconAnimView);
+        }
+    }
+
+
 
     private void resetBoostAnim(BoostAnimator boostAnimator){
         //随机产生气泡距离中心的距离
@@ -125,20 +150,34 @@ public class IconGatherView extends View {
 
     public void start(){
         isRun = true;
-        post(new Runnable() {
+        /*post(new Runnable() {
             @Override
             public void run() {
                 invalidate();
                 if (isRun){
                     postDelayed(this, 16);
                 }
-
             }
-        });
+        });*/
+
     }
 
     public void stop(){
         isRun = false;
 
     }
+
+
+    private Runnable iconRunnable = new Runnable() {
+        @Override
+        public void run() {
+            if (isRun){
+                Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.mipmap.ic_launcher);
+                if (bitmap != null && bitmap.getWidth() > 0 && bitmap.getHeight() > 0){
+                    generateIcon(bitmap);
+                }
+                postDelayed(this, 3000);
+            }
+        }
+    };
 }

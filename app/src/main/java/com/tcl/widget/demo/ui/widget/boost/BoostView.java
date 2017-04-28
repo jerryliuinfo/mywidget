@@ -1,4 +1,4 @@
-package com.tcl.widget.demo.ui.widget;
+package com.tcl.widget.demo.ui.widget.boost;
 
 import android.animation.ValueAnimator;
 import android.content.Context;

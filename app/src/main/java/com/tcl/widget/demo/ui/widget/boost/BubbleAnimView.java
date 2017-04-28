@@ -1,4 +1,4 @@
-package com.tcl.widget.demo.ui.widget;
+package com.tcl.widget.demo.ui.widget.boost;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -7,10 +7,10 @@ import android.graphics.Paint;
  * Created by jerryliu on 2017/4/28.
  */
 
-public class BubbleView extends BoostAnimator {
+public class BubbleAnimView extends BoostAnimator {
     public int mRadis;
 
-    public BubbleView(int mRadis) {
+    public BubbleAnimView(int mRadis) {
         this.mRadis = mRadis;
     }
 
