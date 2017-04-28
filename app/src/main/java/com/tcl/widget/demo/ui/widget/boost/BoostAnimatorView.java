@@ -5,6 +5,8 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -56,6 +58,17 @@ public class BoostAnimatorView extends FrameLayout {
             }
         });
         animatorSet.start();
+        post(new Runnable() {
+            @Override
+            public void run() {
+                Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.mipmap.ic_launcher);
+                if (bitmap != null && bitmap.getWidth() > 0 && bitmap.getHeight() > 0){
+                    icon_gather_view.addIcon(bitmap);
+                }
+
+                postDelayed(this, 3000);
+            }
+        });
     }
 
     public void stopAnim(){

@@ -10,7 +10,6 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.tcl.widget.demo.R;
-import com.tcl.widget.demo.uti.NLog;
 import com.tcl.widget.demo.uti.RandomUtil;
 import com.tcl.widget.demo.uti.ResUtil;
 
@@ -18,8 +17,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
  * Created by jerryliu on 2017/4/28.
@@ -108,6 +105,15 @@ public class IconGatherView extends View {
                 it.remove();
             }
         }
+
+        Iterator<BoostAnimator> iconIterator = mIconAnims.iterator();
+        while (iconIterator.hasNext()) {
+            BoostAnimator anim = iconIterator.next();
+            if (anim.isAnimStoped()) {
+//                pool.recycle(anim);
+                iconIterator.remove();
+            }
+        }
     }
 
 
@@ -123,7 +129,7 @@ public class IconGatherView extends View {
 
     private void generateIcon(Bitmap bitmap){
         float value = mRandom.nextFloat();
-        if (value >= 1 - POP_FACTOR){
+        if (value >= 1 - 0.5){
             IconAnimView iconAnimView = new IconAnimView();
             resetBoostAnim(iconAnimView);
             iconAnimView.setBitmap(bitmap);
@@ -165,6 +171,11 @@ public class IconGatherView extends View {
     public void stop(){
         isRun = false;
 
+    }
+
+
+    public void addIcon(Bitmap bitmap){
+        generateIcon(bitmap);
     }
 
 
