@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import com.tcl.widget.demo.R;
 import com.tcl.widget.demo.ui.base.ABaseFragment;
-import com.tcl.widget.demo.ui.widget.BoostView;
+import com.tcl.widget.demo.ui.widget.BoostAnimatorView;
 
 /**
  * Created by jerryliu on 2017/4/14.
@@ -28,14 +28,23 @@ public class TestWidgetFragment extends ABaseFragment {
     protected void layoutInit(LayoutInflater inflater, Bundle savedInstanceSate) {
         super.layoutInit(inflater, savedInstanceSate);
         btn = (Button) findViewById(R.id.btn);
-        final BoostView boostView = (BoostView) findViewById(R.id.boost_view);
+        final BoostAnimatorView boostAnimatorView = (BoostAnimatorView) findViewById(R.id.boost_anim_view);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boostView.startAnim();
+                if (boostAnimatorView.isAnimRunning()){
+                    boostAnimatorView.stopAnim();
+                }else {
+                    boostAnimatorView.startAnim();
+                }
+
             }
         });
 
 
     }
+
+
 }
+
+

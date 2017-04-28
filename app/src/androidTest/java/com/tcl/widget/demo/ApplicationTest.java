@@ -1,10 +1,10 @@
 package com.tcl.widget.demo;
 
 import android.app.Application;
+import android.os.SystemClock;
 import android.test.ApplicationTestCase;
 
-import com.tcl.widget.demo.uti.Logger;
-
+import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
@@ -50,4 +50,6 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
         // 退出线程池
         exec.shutdown();
     }
+
+
 }

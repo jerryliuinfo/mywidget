@@ -63,10 +63,10 @@
         android:paddingRight="20dp"
         android:visibility="gone"
         />
-    <com.tcl.widget.demo.ui.widget.BoostView
-        android:id="@+id/boost_view"
-        android:layout_width="135dp"
-        android:layout_height="135dp"/>
+    <com.tcl.widget.demo.ui.widget.BoostAnimatorView
+        android:id="@+id/boost_anim_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 
 </LinearLayout>

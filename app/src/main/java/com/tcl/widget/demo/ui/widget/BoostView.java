@@ -2,8 +2,11 @@ package com.tcl.widget.demo.ui.widget;
 
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.LinearGradient;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Shader;
@@ -26,10 +29,12 @@ public class BoostView extends View {
     private Paint mArcPaint;
     private Paint mInnerCirclePaint;
     private int[] mArcColors;
+    private Bitmap mRocketBitmap;
     public BoostView(Context context) {
         super(context,null);
         init();
     }
+
 
     public BoostView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs,0);
@@ -87,6 +92,7 @@ public class BoostView extends View {
 
 
         rComputer.consume(ResUtil.dip2px(5));
+        mRocketBitmap = scaleRocketBitmap();
         LinearGradient linearGradient = new LinearGradient(
                 mCenterX-rComputer.getRemain(), mCenterY,mCenterX+rComputer.getRemain(),mCenterY,
                 ResUtil.getColor(R.color.boostengine_circle_top),ResUtil.getColor(R.color.boostengine_circle_bottom),
@@ -94,6 +100,20 @@ public class BoostView extends View {
         mInnerCirclePaint.setShader(linearGradient);
     }
 
+    int realWidth;
+
+    private Bitmap scaleRocketBitmap(){
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.boostengine_center_icon);
+        int width = bitmap.getWidth();
+        int height = bitmap.getHeight();
+        float scaleW = rComputer.getRemain() / width;
+        float scaleH = rComputer.getRemain() / height;
+        float scale = Math.min(scaleW,scaleH);
+        Matrix matrix = new Matrix();
+        matrix.setScale(scale,scale);
+        realWidth = (int) (width * scale);
+        return Bitmap.createBitmap(bitmap,0,0,width,height,matrix,true);
+    }
 
 
     @Override
@@ -121,6 +141,7 @@ public class BoostView extends View {
 
     private void drawInnerCircle(Canvas canvas){
         canvas.drawCircle(mCenterX,mCenterY, rComputer.getRemain(), mInnerCirclePaint);
+        canvas.drawBitmap(mRocketBitmap,mCenterX - realWidth/2,mCenterY - realWidth/2,mOuterCirclePaint);
     }
 
 
@@ -141,7 +162,30 @@ public class BoostView extends View {
                     invalidate();
                 }
             });
+
+
         }
         mRotateAnimator.start();
+    }
+
+    public boolean isAnimRunning(){
+        if (mRotateAnimator != null){
+            return mRotateAnimator.isRunning();
+        }
+        return false;
+    }
+
+
+
+
+    public void stopAnim(){
+        if (mRotateAnimator != null){
+            mRotateAnimator.cancel();
+        }
+    }
+
+
+    public int getCenterY() {
+        return mCenterY;
     }
 }

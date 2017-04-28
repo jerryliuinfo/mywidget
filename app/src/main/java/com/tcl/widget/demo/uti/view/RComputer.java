@@ -87,14 +87,14 @@ public class RComputer {
      * @param d
      */
     public void consume(float d){
-        mTotalR-=d;
+        mTotalR -= d;
     }
 
     public void increase(float d){
-        mTotalR+=d;
+        mTotalR += d;
     }
 
     public void reset(){
-        mTotalR=mRemember;
+        mTotalR = mRemember;
     }
 }

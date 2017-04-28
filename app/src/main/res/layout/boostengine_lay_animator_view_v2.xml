@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+    >
+
+
+    <com.tcl.widget.demo.ui.widget.BoostView
+        android:id="@+id/boost_view"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        android:layout_gravity="center"/>
+
+    <com.tcl.widget.demo.ui.widget.IconGatherView
+        android:id="@+id/icon_gather_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</FrameLayout>
