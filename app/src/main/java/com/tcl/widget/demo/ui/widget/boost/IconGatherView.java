@@ -10,6 +10,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.tcl.widget.demo.R;
+import com.tcl.widget.demo.uti.NLog;
 import com.tcl.widget.demo.uti.RandomUtil;
 import com.tcl.widget.demo.uti.ResUtil;
 
@@ -117,7 +118,7 @@ public class IconGatherView extends View {
     }
 
 
-    public static final float POP_FACTOR  = 0.02f;
+    public static final float POP_FACTOR  = 0.1f;
     private void generateBubble(){
         float value = mRandom.nextFloat();
         if (value >= 1 - POP_FACTOR){
@@ -133,7 +134,7 @@ public class IconGatherView extends View {
             IconAnimView iconAnimView = new IconAnimView();
             resetBoostAnim(iconAnimView);
             iconAnimView.setBitmap(bitmap);
-            mIconAnims.add(iconAnimView);
+            //mIconAnims.add(iconAnimView);
         }
     }
 
@@ -142,11 +143,15 @@ public class IconGatherView extends View {
     private void resetBoostAnim(BoostAnimator boostAnimator){
         //随机产生气泡距离中心的距离
         float randR = RandomUtil.randInt(mBubbleGenMinRadius,mBubbleGenMaxRadius);
+        NLog.d(TAG, "resetBoostAnim mCenterX = %s, mCenterY = %s, mBubbleGenMinRadius = %s, mBubbleGenMaxRadius = %s",
+                mCenterX,mCenterY,mBubbleGenMinRadius,mBubbleGenMaxRadius);
         //随机生成一个角度 转换成弧度用于计算坐标
         float angel = (float) (RandomUtil.randInt(0,360) * Math.PI / 180);
 
         int orginalX = (int) (mCenterX + randR * Math.cos(angel));
         int orinalY = (int) (mCenterY + randR * Math.sin(angel));
+        NLog.d(TAG, "resetBoostAnim orginalX = %s, orinalY = %s",
+                orginalX,orinalY);
         boostAnimator.reset(mCenterX,mCenterY,orginalX,orinalY);
         boostAnimator.start();
 

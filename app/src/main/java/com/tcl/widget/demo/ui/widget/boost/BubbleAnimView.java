@@ -18,7 +18,7 @@ public class BubbleAnimView extends BoostAnimator {
     protected void onDraw(Canvas canvas, Paint paint, float x, float y, float fraction) {
         int originalAlpha = paint.getAlpha();
         int currentAlpha = (int) (255 * fraction);
-        paint.setAlpha(currentAlpha);
+        paint.setAlpha(255);
 
         canvas.drawCircle(x,y,mRadis * fraction,paint);
         //恢复画笔透明度

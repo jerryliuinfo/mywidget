@@ -17,20 +17,30 @@ public abstract class BoostAnimator {
     private int mOriginX;
     private int mOriginY;
     private float mScaleAlphaFraction;
+    private float mAlphaFraction;
     private float mTransitionFraction;
 
 
 
     private volatile boolean isAnimStoped=false;
     protected BoostAnimator(){
-        ValueAnimator scaleAndAlphaAnimator =ValueAnimator.ofFloat(0,1);
+        ValueAnimator scaleAndAlphaAnimator =ValueAnimator.ofFloat(1,1);
         scaleAndAlphaAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 mScaleAlphaFraction =animation.getAnimatedFraction();
+                //NLog.d("BoostAnimator", "mScaleAlphaFraction = %s", mScaleAlphaFraction);
             }
         });
-        scaleAndAlphaAnimator.setInterpolator(new FirstBitLatorSmallInterceptor(0.1f));
+        ValueAnimator alphaAnimator =ValueAnimator.ofFloat(0,1);
+        alphaAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                mAlphaFraction =animation.getAnimatedFraction();
+                //NLog.d("BoostAnimator", "mScaleAlphaFraction = %s", mScaleAlphaFraction);
+            }
+        });
+        alphaAnimator.setInterpolator(new FirstBitLatorSmallInterceptor(0.1f));
 
 
         ValueAnimator transitionAnimator =ValueAnimator.ofFloat(0,1);
@@ -42,7 +52,7 @@ public abstract class BoostAnimator {
         });
 
         set=new AnimatorSet();
-        set.setDuration(1000);
+        set.setDuration(800);
         set.playTogether(scaleAndAlphaAnimator,transitionAnimator);
         set.addListener(new AnimatorListenerAdapter() {
             @Override

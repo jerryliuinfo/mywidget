@@ -5,8 +5,6 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 
-import com.tcl.widget.demo.uti.NLog;
-
 /**
  * Created by jerryliu on 2017/4/28.
  */
@@ -14,7 +12,7 @@ import com.tcl.widget.demo.uti.NLog;
 public class IconAnimView extends BoostAnimator {
     public static final String TAG = IconGatherView.TAG;
     private Bitmap bitmap;
-    private int r = 100;
+    private int r = 70;
     public void setBitmap(Bitmap bitmap){
         this.bitmap = bitmap;
         srcRect = new Rect(0,0,bitmap.getWidth(),bitmap.getHeight());
@@ -27,7 +25,7 @@ public class IconAnimView extends BoostAnimator {
         int originalAlpha = paint.getAlpha();
         int currentAlpha = (int) (255 * fraction);
         paint.setAlpha(originalAlpha);
-        NLog.d(TAG, "IconAnimView fraction = %s", fraction);
+        //NLog.d(TAG, "IconAnimView fraction = %s", fraction);
         int xx = (int) x;
         int yy = (int) y;
         int scaler = (int) (r * fraction);

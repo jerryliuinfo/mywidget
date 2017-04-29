@@ -7,7 +7,7 @@ import android.animation.TimeInterpolator;
  */
 
 public class FirstBitLatorSmallInterceptor implements TimeInterpolator {
-    float reachmax = 0.3f;
+    float reachmax = 0.1f;
     float scale1;
     float scale2;
 
@@ -19,10 +19,11 @@ public class FirstBitLatorSmallInterceptor implements TimeInterpolator {
 
     @Override
     public float getInterpolation(float input) {
-        if (input > reachmax) {
-            return 1 - ((input - reachmax) * scale2);
-        } else {
+        //时间比系哦啊与0.1的时候 线性增加
+        if (input < reachmax) {
             return input * scale1;
+        } else {
+            return 1 - ((input - reachmax) * scale2);
         }
     }
 }
