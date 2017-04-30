@@ -8,6 +8,7 @@ import android.widget.Button;
 import com.tcl.widget.demo.R;
 import com.tcl.widget.demo.ui.base.ABaseFragment;
 import com.tcl.widget.demo.ui.widget.boost.BoostAnimatorView;
+import com.tcl.widget.demo.ui.widget.threestep.AndroidPath;
 
 /**
  * Created by jerryliu on 2017/4/14.
@@ -29,17 +30,22 @@ public class TestWidgetFragment extends ABaseFragment {
         super.layoutInit(inflater, savedInstanceSate);
         btn = (Button) findViewById(R.id.btn);
         final BoostAnimatorView boostAnimatorView = (BoostAnimatorView) findViewById(R.id.boost_anim_view);
+        final AndroidPath androidPath = (AndroidPath) findViewById(R.id.path);
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (boostAnimatorView.isAnimRunning()){
+                /*if (boostAnimatorView.isAnimRunning()){
                     boostAnimatorView.stopAnim();
                 }else {
                     boostAnimatorView.startAnim();
-                }
-
+                }*/
+                //androidPath.reset();
+                androidPath.startAnim();
             }
         });
+
+
 
 
     }
