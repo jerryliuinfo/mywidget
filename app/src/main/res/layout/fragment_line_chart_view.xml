@@ -74,6 +74,31 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:background="@color/white"
+        android:visibility="gone"
         />
-
+    <com.tcl.widget.demo.ui.widget.threestep.PathEffect
+        android:id="@+id/path_effect"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:visibility="gone"
+        />
+    <com.tcl.widget.demo.ui.widget.threestep.XFermMode
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
+    <com.tcl.widget.demo.ui.widget.threestep.XFermModeRevert
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
+    <com.tcl.widget.demo.ui.widget.threestep.DogViewSrcOut
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
+    <com.tcl.widget.demo.ui.widget.threestep.animator.BounceAnimatorView
+        android:id="@+id/bounce_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

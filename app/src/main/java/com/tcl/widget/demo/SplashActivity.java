@@ -26,6 +26,7 @@ public class SplashActivity extends BaseActivity {
         btn = (TextView) findViewById(R.id.btn);
 
         FragmentContainerActivity.launch(this, TestWidgetFragment.class,null);
+        //FragmentContainerActivity.launch(this, MemoryLeakFragment.class,null);
         finish();
 
 

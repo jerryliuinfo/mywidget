@@ -15,6 +15,15 @@ public class ViewUtil {
         return fontMetrics.bottom-fontMetrics.descent-fontMetrics.ascent;
     }
 
+
+    public static float getBaseY(Paint textPaint){
+        Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
+        float top = fontMetrics.top;//为基线到字体上边框的距离,即上图中的top
+        float bottom = fontMetrics.bottom;//为基线到字体下边框的距离,即上图中的bottom
+        return (top + bottom) / 2;
+    }
+
+
     /**
      * 获得text所占用的宽度
      * @param paint
