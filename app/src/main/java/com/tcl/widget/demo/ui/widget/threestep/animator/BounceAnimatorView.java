@@ -63,7 +63,6 @@ public class BounceAnimatorView extends View {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 mCurrentPoint = (Point) animation.getAnimatedValue();
-
             }
         });
 
@@ -74,7 +73,6 @@ public class BounceAnimatorView extends View {
 
         animatorSet.start();
 
-
     }
 
 
@@ -84,6 +82,7 @@ public class BounceAnimatorView extends View {
         super.onDraw(canvas);
         if (mRadis > 0){
             canvas.drawCircle(mCurrentPoint.mCenterX ,mCurrentPoint.mCenterY, mRadis,mPaint);
+
         }
 
     }
