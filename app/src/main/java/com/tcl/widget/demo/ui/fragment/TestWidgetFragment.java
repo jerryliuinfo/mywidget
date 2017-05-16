@@ -46,16 +46,16 @@ public class TestWidgetFragment extends ABaseFragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (boostAnimatorView.isAnimRunning()){
+                /*if (boostAnimatorView.isAnimRunning()){
                     boostAnimatorView.stopAnim();
                 }else {
                     boostAnimatorView.startAnim();
-                }
+                }*/
                 //androidPath.reset();
                 //androidPath.startAnim();
                 //pathEffect.startAnim();
                 //doAnimation();
-                //bounce_view.doAnimation();
+                bounce_view.doAnimation();
             }
         });
     }
