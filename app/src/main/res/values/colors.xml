@@ -91,4 +91,11 @@
     <color name="boostengine_circle_top">#1fc5ff</color>
     <color name="boostengine_circle_bottom">#2473f9</color>
 
+
+    <color name="base_gray">#CCC</color>
+
+    <color name="base_permission_guide_switch_btn_circle_select">#009688</color>
+    <color name="base_permission_guide_switch_btn_line">#f2f2f2</color>
+    <color name="base_permission_guide_switch_btn_line_select">#9ae9e1</color>
+
 </resources>

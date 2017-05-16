@@ -9,6 +9,7 @@ import android.widget.Button;
 import com.tcl.widget.demo.R;
 import com.tcl.widget.demo.ui.base.ABaseFragment;
 import com.tcl.widget.demo.ui.widget.boost.BoostAnimatorView;
+import com.tcl.widget.demo.ui.widget.supercleaner.SwitchButton;
 import com.tcl.widget.demo.ui.widget.threestep.AndroidPath;
 import com.tcl.widget.demo.ui.widget.threestep.PathEffect;
 import com.tcl.widget.demo.ui.widget.threestep.animator.BounceAnimatorView;
@@ -27,6 +28,7 @@ public class TestWidgetFragment extends ABaseFragment {
 
     private Button btn;
     private BounceAnimatorView bounce_view;
+    private SwitchButton switch_button;
     @Override
     protected int inflateContentView() {
         return R.layout.fragment_line_chart_view;
@@ -43,6 +45,8 @@ public class TestWidgetFragment extends ABaseFragment {
         final AndroidPath androidPath = (AndroidPath) findViewById(R.id.path);
         final PathEffect pathEffect = (PathEffect) findViewById(R.id.path_effect);
 
+        switch_button = (SwitchButton) findViewById(R.id.switch_button);
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,6 +60,7 @@ public class TestWidgetFragment extends ABaseFragment {
                 //pathEffect.startAnim();
                 //doAnimation();
                 bounce_view.doAnimation();
+                switch_button.performClicked();
             }
         });
     }
