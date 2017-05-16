@@ -67,7 +67,7 @@
         android:id="@+id/boost_anim_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
+
         />
     <com.tcl.widget.demo.ui.widget.threestep.AndroidPath
         android:id="@+id/path"
@@ -100,5 +100,7 @@
     <com.tcl.widget.demo.ui.widget.threestep.animator.BounceAnimatorView
         android:id="@+id/bounce_view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
 </LinearLayout>

@@ -1,6 +1,7 @@
 package com.tcl.widget.demo;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.view.Menu;
 import android.widget.TextView;
@@ -28,9 +29,6 @@ public class SplashActivity extends BaseActivity {
         FragmentContainerActivity.launch(this, TestWidgetFragment.class,null);
         //FragmentContainerActivity.launch(this, MemoryLeakFragment.class,null);
         finish();
-        //test2
-        //git push
-
 
     }
 
