@@ -29,6 +29,7 @@ public class SplashActivity extends BaseActivity {
         //FragmentContainerActivity.launch(this, MemoryLeakFragment.class,null);
         finish();
 
+        //git stash test dev3
 
     }
 
