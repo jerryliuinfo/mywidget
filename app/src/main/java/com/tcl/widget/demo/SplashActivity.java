@@ -31,6 +31,7 @@ public class SplashActivity extends BaseActivity {
         //test2
         //git push
         //test git stash
+        //test git stash apply
 
 
     }
