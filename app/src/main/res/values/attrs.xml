@@ -99,5 +99,12 @@
     </declare-styleable>
 
 
+    <declare-styleable name="my_slides_witch">
+        <attr name="is_open" format="boolean" />
+        <attr name="switch_shape">
+            <enum name="rect" value="1" />
+            <enum name="circle" value="2" />
+        </attr>
+    </declare-styleable>
 
 </resources>

@@ -14,6 +14,10 @@
     <color name="violet">#6600FF</color><!--紫色  -->
     <color name="brown">#714f16</color><!--褐色  -->
     <color name="gray">#808a87</color><!-- 灰色 -->
+
+
+
+
     <color name="dialogback">#7a510d</color>
     <color name="detailTitle">#997354</color><!-- 业务详情标题颜色 -->
     <color name="detailContent">#665d4c</color><!-- 业务详情内容颜色-->

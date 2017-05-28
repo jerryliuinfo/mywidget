@@ -1,0 +1,84 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:slideswitch="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffffff"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="10dip"
+     >
+
+    <com.tcl.widget.demo.ui.widget.supercleaner.SlideSwitch
+        android:id="@+id/swit"
+        android:layout_width="150dip"
+        android:layout_height="60dip"
+        slideswitch:is_open="true"
+        slideswitch:switch_shape="circle"
+        slideswitch:themeColor="#ffee3a00" >
+    </com.tcl.widget.demo.ui.widget.supercleaner.SlideSwitch>
+
+
+
+
+
+    <TextView
+        android:id="@+id/txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        />
+
+    <com.tcl.widget.demo.ui.widget.supercleaner.MySwitch
+        android:id="@+id/myswitch"
+        android:layout_width="150dp"
+        android:layout_height="60dp"/>
+    <com.tcl.widget.demo.ui.widget.supercleaner.SlideSwitch
+        android:id="@+id/swit2"
+        android:layout_width="190dip"
+        android:layout_height="100dip"
+        android:layout_marginTop="10dip"
+        slideswitch:is_open="true"
+        slideswitch:switch_shape="circle"
+        slideswitch:themeColor="#ff0a5a00"
+        android:visibility="gone"
+        >
+    </com.tcl.widget.demo.ui.widget.supercleaner.SlideSwitch>
+
+    <com.tcl.widget.demo.ui.widget.supercleaner.SlideSwitch
+        android:id="@+id/swit3"
+        android:layout_width="20dip"
+        android:layout_height="50dip"
+        android:layout_marginTop="10dip"
+        slideswitch:is_open="true"
+        slideswitch:switch_shape="circle"
+        slideswitch:themeColor="#ff73aa00"
+        android:visibility="gone"
+        >
+    </com.tcl.widget.demo.ui.widget.supercleaner.SlideSwitch>
+
+    <com.tcl.widget.demo.ui.widget.supercleaner.SlideSwitch
+        android:id="@+id/swit4"
+        android:layout_width="100dip"
+        android:layout_height="120dip"
+        android:layout_marginTop="10dip"
+        slideswitch:is_open="false"
+        slideswitch:switch_shape="circle"
+        slideswitch:themeColor="#f200aa96"
+        android:visibility="gone"
+        >
+    </com.tcl.widget.demo.ui.widget.supercleaner.SlideSwitch>
+
+    <com.tcl.widget.demo.ui.widget.supercleaner.SlideSwitch
+        android:id="@+id/swit5"
+        android:layout_width="90dip"
+        android:layout_height="50dip"
+        android:layout_marginTop="10dip"
+        slideswitch:is_open="true"
+        slideswitch:switch_shape="rect"
+        slideswitch:themeColor="#f23331a0"
+        android:visibility="gone"
+        >
+    </com.tcl.widget.demo.ui.widget.supercleaner.SlideSwitch>
+
+</LinearLayout>

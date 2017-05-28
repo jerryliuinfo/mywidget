@@ -9,6 +9,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 
 import com.tcl.widget.demo.R;
 import com.tcl.widget.demo.uti.DisplayUtil;
@@ -20,7 +21,7 @@ import com.tcl.widget.demo.uti.ResUtil;
 
 public class SwitchButton extends android.support.v7.widget.AppCompatImageView {
     private Paint mBgPaint;
-    private Paint mSlidePaint;
+    private Paint mSlideCirclePaint;
     private Paint mRipplePaint;
 
     private RectF mBgRect;
@@ -51,28 +52,31 @@ public class SwitchButton extends android.support.v7.widget.AppCompatImageView {
         mRipplePaint.setStyle(Paint.Style.FILL);
         mRipplePaint.setColor(ResUtil.getColor(R.color.base_gray));
 
-        mSlidePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mSlidePaint.setStyle(Paint.Style.FILL);
-        mSlidePaint.setColor(ResUtil.getColor(R.color.green));
+        mSlideCirclePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        mSlideCirclePaint.setStyle(Paint.Style.FILL);
+        mSlideCirclePaint.setColor(ResUtil.getColor(R.color.green));
 
 
-        mBgWidth = ResUtil.dip2px(30);
-        mBgHeight = ResUtil.dip2px(15);
         mBgRect = new RectF();
 
-        mCircleRadis = ResUtil.dip2px(10);
+        mRadis = ResUtil.dip2px(10);
+
+        mLeftGap = ResUtil.dip2px(10);
+        mTopGap = ResUtil.dip2px(10);
     }
 
-    private int mBgWidth, mBgHeight;
-    private float mCircleRadis;
+    private float mRadis;//圆半径
+    private int mLeftGap;
+    private int mTopGap;
+
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        mBgRect.left = (getMeasuredWidth() - mBgWidth ) / 2;
-        mBgRect.right = mBgRect.left + mBgWidth;
-        mBgRect.top = (getMeasuredHeight() - mBgHeight ) / 2;
-        mBgRect.bottom = mBgRect.top + mBgHeight;
+        mBgRect.left = mLeftGap;
+        mBgRect.right = getMeasuredWidth() - mLeftGap;
+        mBgRect.top = mTopGap;
+        mBgRect.bottom = getMeasuredHeight() - mTopGap;
     }
 
     @Override
@@ -91,7 +95,7 @@ public class SwitchButton extends android.support.v7.widget.AppCompatImageView {
     private float mDeltaX;
 
     private void drawCircle(Canvas canvas){
-        canvas.drawCircle(mBgRect.left + mCircleRadis + mDeltaX, getMeasuredHeight() / 2, mCircleRadis,mSlidePaint);
+        canvas.drawCircle(mBgRect.left + mRadis + mDeltaX, getMeasuredHeight() / 2, mRadis, mSlideCirclePaint);
     }
 
     private void drawRipple(Canvas canvas){
@@ -111,15 +115,15 @@ public class SwitchButton extends android.support.v7.widget.AppCompatImageView {
 
 
     public void performClicked(){
-        this.mSlidePaint.setColor(this.getResources().getColor(R.color.base_permission_guide_switch_btn_circle_select));
-        this.mBgPaint.setColor(this.getResources().getColor(R.color.base_permission_guide_switch_btn_line_select));
+        this.mSlideCirclePaint.setColor(ResUtil.getColor(R.color.base_permission_guide_switch_btn_circle_select));
+        this.mBgPaint.setColor(ResUtil.getColor(R.color.base_permission_guide_switch_btn_line_select));
         ValueAnimator animator = ValueAnimator.ofFloat(0,1);
-        animator.setDuration(500);
+        animator.setDuration(5000);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 float animValue = (float) animation.getAnimatedValue();
-                mDeltaX = (mBgRect.right - mBgRect.left - mCircleRadis * 2 ) * animValue;
+                mDeltaX = (mBgRect.right - mBgRect.left - mRadis * 2 ) * animValue;
 
                 mRippleProgress = animValue;
                 invalidate();
@@ -130,11 +134,27 @@ public class SwitchButton extends android.support.v7.widget.AppCompatImageView {
 
     public void reset() {
         this.clearAnimation();
-        this.mSlidePaint.setColor(Color.argb(255, 217, 217, 217));
+        this.mSlideCirclePaint.setColor(Color.argb(255, 217, 217, 217));
         this.mBgPaint.setColor(ResUtil.getColor(R.color.base_permission_guide_switch_btn_line));
         this.mDeltaX = 0;
         this.invalidate();
     }
 
+    float downX,downY;
 
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                downX = event.getX();
+                downY = event.getY();
+                invalidate();
+                break;
+            case MotionEvent.ACTION_MOVE:
+                break;
+            case MotionEvent.ACTION_UP:
+                break;
+        }
+        return super.onTouchEvent(event);
+    }
 }
