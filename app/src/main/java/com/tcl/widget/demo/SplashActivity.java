@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.tcl.widget.demo.container.FragmentContainerActivity;
 import com.tcl.widget.demo.ui.base.BaseActivity;
-import com.tcl.widget.demo.ui.fragment.TestSlideSwitchFragment;
+import com.tcl.widget.demo.ui.widget.threestep.ThreeStepTestFragment;
 
 /**
  * @author Jerry
@@ -26,7 +26,8 @@ public class SplashActivity extends BaseActivity {
         btn = (TextView) findViewById(R.id.btn);
 
         //FragmentContainerActivity.launch(this, TestWidgetFragment.class,null);
-        FragmentContainerActivity.launch(this, TestSlideSwitchFragment.class,null);
+        //FragmentContainerActivity.launch(this, TestSlideSwitchFragment.class,null);
+        FragmentContainerActivity.launch(this, ThreeStepTestFragment.class,null);
         //FragmentContainerActivity.launch(this, MemoryLeakFragment.class,null);
         finish();
         //test2

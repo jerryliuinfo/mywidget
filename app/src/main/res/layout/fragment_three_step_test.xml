@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+            android:gravity="center"
+              android:background="#404660"
+    >
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="onClick"
+        />
+    <com.tcl.widget.demo.ui.widget.threestep.PaintView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <com.tcl.widget.demo.ui.widget.threestep.PathView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"/>
+    <com.tcl.widget.demo.ui.widget.threestep.CanvasView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"/>
+    <com.tcl.widget.demo.ui.widget.threestep.BeizerView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"/>
+
+
+
+
+</LinearLayout>
