@@ -3,7 +3,6 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-            android:gravity="center"
               android:background="#404660"
     >
     <Button
@@ -14,19 +13,55 @@
         />
     <com.tcl.widget.demo.ui.widget.threestep.PaintView
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:layout_height="50dp"
+        android:visibility="gone"
+        />
 
     <com.tcl.widget.demo.ui.widget.threestep.PathView
+        android:id="@+id/path_view"
         android:layout_width="match_parent"
-        android:layout_height="100dp"/>
-    <com.tcl.widget.demo.ui.widget.threestep.CanvasView
-        android:layout_width="match_parent"
-        android:layout_height="100dp"/>
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
     <com.tcl.widget.demo.ui.widget.threestep.BeizerView
         android:layout_width="match_parent"
-        android:layout_height="200dp"/>
+        android:layout_height="200dp"
+        android:visibility="gone"
+        />
 
+    <ImageView
+        android:id="@+id/drawable_tint1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:visibility="gone"
+        />
+    <ImageView
+        android:id="@+id/drawable_tint2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:visibility="gone"
+        />
 
+    <com.tcl.widget.demo.ui.widget.threestep.PorterDuffFilterView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
 
+    <com.tcl.widget.demo.ui.widget.threestep.canvas.CanvasView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
 
+    <!--<com.tcl.widget.demo.ui.widget.threestep.canvas.RedPointView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />-->
+    <com.tcl.widget.demo.ui.widget.threestep.canvas.RedPointControlView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 </LinearLayout>
