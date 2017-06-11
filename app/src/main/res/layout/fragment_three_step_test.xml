@@ -63,5 +63,23 @@
         />-->
     <com.tcl.widget.demo.ui.widget.threestep.canvas.RedPointControlView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
+    <com.tcl.widget.demo.ui.widget.threestep.canvas.RedPointControlView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
+
+    <com.tcl.widget.demo.ui.widget.threestep.canvas.RedPointControlExplodeView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+
+
+
+
+
 </LinearLayout>

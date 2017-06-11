@@ -7,13 +7,16 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PointF;
 import android.graphics.Rect;
+import android.graphics.drawable.AnimationDrawable;
 import android.support.annotation.AttrRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.tcl.widget.demo.R;
@@ -23,32 +26,35 @@ import com.tcl.widget.demo.uti.ResUtil;
  * Created by jerryliu on 2017/6/10.
  */
 
-public class RedPointControlView extends FrameLayout {
+public class RedPointControlExplodeView extends FrameLayout {
     private Paint mPaint;
     private PointF mStartPoint;
     private PointF mCurrentPoint;
-    private float DEFAULT_RADIS = 40;
+    private float DEFAULT_RADIS = 20;
     private float mRadis = DEFAULT_RADIS;
     //拖动过程中圆的最小半径
-    public static final int MIN_RADIS = 20;
+    public static final int MIN_RADIS = 10;
     private boolean mTouche;
     private Path mPath;
 
     private TextView mTipTextView;
     private Rect mTipTextRectF;
 
+    private ImageView mExplodeImageView;
+    private boolean mIsAnimStart = false;
 
-    public RedPointControlView(@NonNull Context context) {
+
+    public RedPointControlExplodeView(@NonNull Context context) {
         super(context,null);
         init();
     }
 
-    public RedPointControlView(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public RedPointControlExplodeView(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs,0);
         init();
     }
 
-    public RedPointControlView(@NonNull Context context, @Nullable AttributeSet attrs, @AttrRes int defStyleAttr) {
+    public RedPointControlExplodeView(@NonNull Context context, @Nullable AttributeSet attrs, @AttrRes int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
@@ -56,7 +62,7 @@ public class RedPointControlView extends FrameLayout {
     private void init(){
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setStyle(Paint.Style.FILL);
-        mPaint.setColor(ResUtil.getColor(R.color.green));
+        mPaint.setColor(ResUtil.getColor(R.color.red));
 
         mStartPoint = new PointF(100,100);
         mCurrentPoint = new PointF();
@@ -73,7 +79,13 @@ public class RedPointControlView extends FrameLayout {
         mTipTextView.setTextColor(Color.WHITE);
         mTipTextView.setText("99+");
 
+        mExplodeImageView = new ImageView(getContext());
+        mExplodeImageView.setLayoutParams(params);
+        mExplodeImageView.setImageDrawable(ContextCompat.getDrawable(getContext(),R.drawable.tip_anim));
+        mExplodeImageView.setVisibility(INVISIBLE);
+
         addView(mTipTextView);
+        addView(mExplodeImageView);
 
     }
 
@@ -81,7 +93,10 @@ public class RedPointControlView extends FrameLayout {
     protected void dispatchDraw(Canvas canvas) {
 
         canvas.saveLayer(0,0,getWidth(),getHeight(),mPaint,Canvas.CLIP_SAVE_FLAG);
-        if (mTouche){
+        if (!mTouche || mIsAnimStart){
+            mTipTextView.setX(mStartPoint.x - mTipTextView.getWidth() / 2);
+            mTipTextView.setY(mStartPoint.y - mTipTextView.getHeight() / 2);
+        }else {
             caculatePath();
             canvas.drawCircle(mStartPoint.x,mStartPoint.y, mRadis,mPaint);
             canvas.drawCircle(mCurrentPoint.x,mCurrentPoint.y,mRadis,mPaint);
@@ -89,9 +104,6 @@ public class RedPointControlView extends FrameLayout {
 
             mTipTextView.setX(mCurrentPoint.x - mTipTextView.getWidth() / 2);
             mTipTextView.setY(mCurrentPoint.y - mTipTextView.getHeight() / 2);
-        }else {
-            mTipTextView.setX(mStartPoint.x - mTipTextView.getWidth() / 2);
-            mTipTextView.setY(mStartPoint.y - mTipTextView.getHeight() / 2);
         }
         canvas.restore();
         super.dispatchDraw(canvas);
@@ -142,7 +154,14 @@ public class RedPointControlView extends FrameLayout {
         double distance = Math.sqrt(Math.pow(dx,2) + Math.pow(dy,2));
         mRadis = (float) (DEFAULT_RADIS - distance / 15);
         if (mRadis <= MIN_RADIS){
-            mRadis = MIN_RADIS;
+            //mRadis = MIN_RADIS;
+            mIsAnimStart = true;
+
+            mExplodeImageView.setX(mCurrentPoint.x - mTipTextView.getWidth() / 2);
+            mExplodeImageView.setY(mCurrentPoint.y - mTipTextView.getHeight() / 2);
+            mExplodeImageView.setVisibility(VISIBLE);
+            ((AnimationDrawable)(mExplodeImageView.getDrawable())).start();
+            mTipTextView.setVisibility(INVISIBLE);
         }
 
     }
