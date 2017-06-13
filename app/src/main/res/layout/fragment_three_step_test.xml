@@ -73,9 +73,68 @@
         />
 
     <com.tcl.widget.demo.ui.widget.threestep.canvas.RedPointControlExplodeView
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="gone"
         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="带阴影按钮"
+        android:background="@drawable/layer_shape_list"
+        android:visibility="gone"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="带按下效果按钮"
+        android:background="@drawable/layer_selector_list"
+        android:visibility="gone"
+        />
+    <Button
+        android:id="@+id/btn_radis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="change radis"
+        android:visibility="gone"
+
+        />
+    <Button
+        android:id="@+id/btn_dx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="change dx"
+        android:visibility="gone"
+        />
+
+    <Button
+        android:id="@+id/btn_dy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="change dy"
+        android:visibility="gone"
+        />
+    <Button
+        android:id="@+id/btn_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="clear shadow"
+        android:visibility="gone"
+        />
+
+    <com.tcl.widget.demo.ui.widget.threestep.ShadowLayerView
+        android:id="@+id/shade_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
+    <com.tcl.widget.demo.ui.widget.threestep.BlurMaskFiterView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
 
 
 

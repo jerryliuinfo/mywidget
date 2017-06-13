@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -44,7 +45,31 @@ public class ThreeStepTestFragment extends ABaseFragment {
         drawable_tint1.setImageDrawable(tintDrawable(drawable, ContextCompat.getColorStateList(getActivity(),R.color.hawk_selector)));
 
 
-
+        final ShadowLayerView shadowLayerView = (ShadowLayerView) findViewById(R.id.shade_view);
+        findViewById(R.id.btn_radis).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                shadowLayerView.changeRaidis();
+            }
+        });
+        findViewById(R.id.btn_dx).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                shadowLayerView.changeDx();
+            }
+        });
+        findViewById(R.id.btn_dy).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                shadowLayerView.changeDy();
+            }
+        });
+        findViewById(R.id.btn_clear).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                shadowLayerView.clearShadow();
+            }
+        });
     }
 
     public static Drawable tintDrawable(Drawable drawable, ColorStateList colors) {
