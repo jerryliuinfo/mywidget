@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
@@ -132,9 +133,48 @@
         />
     <com.tcl.widget.demo.ui.widget.threestep.BlurMaskFiterView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
 
+    <com.tcl.widget.demo.ui.widget.threestep.ExtraAlphaView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
+    <com.tcl.widget.demo.ui.widget.threestep.shader.BitmapShaderView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
+    <com.tcl.widget.demo.ui.widget.threestep.shader.TelescopeView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        />
 
+    <com.tcl.widget.demo.ui.widget.threestep.shader.AvatorView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:format = "circle"
+        android:visibility="gone"
+        />
+    <com.tcl.widget.demo.ui.widget.threestep.shader.AvatorView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:format = "rect"
+        android:visibility="gone"
+        />
+
+    <com.tcl.widget.demo.ui.widget.threestep.shader.AvatorView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:format = "rect"
+        android:visibility="gone"
+        />
+    <com.tcl.widget.demo.ui.widget.threestep.shader.LinearGradientView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 
 
