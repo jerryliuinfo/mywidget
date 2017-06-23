@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+
+    <!-- 圆形进度条 -->
+    <declare-styleable name="circle_color_progress">
+        <!-- 背景圆弧颜色 -->
+        <attr name="bgArcColor" format="color|reference"/>
+        <attr name="max_value" format="float"/>
+        <attr name="start_angel" format="float"/>
+        <attr name="sweep_angel" format="float"/>
+    </declare-styleable>
+
     <declare-styleable name="CircleProgressBar">
         <!--背景颜色-->
         <attr name="background_color"  format="color|reference"/>
