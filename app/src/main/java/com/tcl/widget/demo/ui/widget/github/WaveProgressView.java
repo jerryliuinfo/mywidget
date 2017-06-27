@@ -125,7 +125,7 @@ public class WaveProgressView extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        int defaultSize = ResUtil.dip2px(150);
+        int defaultSize = ResUtil.dp2px(150);
         setMeasuredDimension(MeasureUtil.getMeasuredLength(widthMeasureSpec,defaultSize),MeasureUtil.getMeasuredLength(heightMeasureSpec,defaultSize));
     }
 

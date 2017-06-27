@@ -74,7 +74,7 @@ public class RedPointControlExplodeView extends FrameLayout {
         LayoutParams params = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         mTipTextView = new TextView(getContext());
         mTipTextView.setLayoutParams(params);
-        mTipTextView.setPadding(ResUtil.dip2px(5), ResUtil.dip2px(5), ResUtil.dip2px(5), ResUtil.dip2px(5));
+        mTipTextView.setPadding(ResUtil.dp2px(5), ResUtil.dp2px(5), ResUtil.dp2px(5), ResUtil.dp2px(5));
         mTipTextView.setBackgroundResource(R.drawable.red_point_textview_bg);
         mTipTextView.setTextColor(Color.WHITE);
         mTipTextView.setText("99+");

@@ -91,13 +91,13 @@ public class SubmitButtonView extends View {
         mTextPaint.setTextAlign(Paint.Align.CENTER);
 
         mHookPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        PaintConfigUtil.configNormal(mHookPaint,ResUtil.getColor(R.color.white),ResUtil.dip2px(1), Paint.Style.STROKE);
+        PaintConfigUtil.configNormal(mHookPaint,ResUtil.getColor(R.color.white),ResUtil.dp2px(1), Paint.Style.STROKE);
 
         mRectCirclePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        PaintConfigUtil.configNormal(mRectCirclePaint,ResUtil.getColor(R.color.holo_orange_dark),ResUtil.dip2px(1), Paint.Style.FILL);
+        PaintConfigUtil.configNormal(mRectCirclePaint,ResUtil.getColor(R.color.holo_orange_dark),ResUtil.dp2px(1), Paint.Style.FILL);
 
         mOkPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        PaintConfigUtil.configNormal(mOkPaint,ResUtil.getColor(R.color.white),ResUtil.dip2px(2), Paint.Style.STROKE);
+        PaintConfigUtil.configNormal(mOkPaint,ResUtil.getColor(R.color.white),ResUtil.dp2px(2), Paint.Style.STROKE);
 
         mPathMeasure = new PathMeasure();
         mRectF = new RectF();

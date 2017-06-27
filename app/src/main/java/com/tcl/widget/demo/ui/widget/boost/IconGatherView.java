@@ -56,7 +56,7 @@ public class IconGatherView extends View {
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setStyle(Paint.Style.FILL);
         mPaint.setColor(ResUtil.getColor(R.color.white));
-        mBubbleRadis = ResUtil.dip2px(7);
+        mBubbleRadis = ResUtil.dp2px(7);
         mRandom = new Random(10);
     }
 

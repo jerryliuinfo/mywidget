@@ -36,7 +36,7 @@ public class BeizerView extends View {
     private void init(){
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setStrokeWidth(ResUtil.dip2px(3));
+        mPaint.setStrokeWidth(ResUtil.dp2px(3));
         mPaint.setColor(ResUtil.getColor(R.color.green));
 
         mPath = new Path();

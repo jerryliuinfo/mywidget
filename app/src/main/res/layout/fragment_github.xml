@@ -22,7 +22,7 @@
         app:start_angel="135"
         app:sweep_angel="270"
         app:bgArcColor="@color/colorAccent"
-        android:visibility="gone"
+
         />
     <com.tcl.widget.demo.ui.widget.github.WaveProgressView
         android:id="@+id/wave_progress1"
@@ -35,10 +35,17 @@
         android:id="@+id/submit"
         android:layout_width="200dp"
         android:layout_height="50dp"
+        android:visibility="gone"
         />
     <com.tcl.widget.demo.ui.widget.path.DashPathEffectView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
+        />
+    <com.tcl.widget.demo.ui.widget.github.CustomProgressView
+        android:id="@+id/custom_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         />
 </LinearLayout>

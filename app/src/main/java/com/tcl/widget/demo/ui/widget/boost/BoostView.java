@@ -50,12 +50,12 @@ public class BoostView extends View {
     private void init(){
         mOuterCirclePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mOuterCirclePaint.setStyle(Paint.Style.STROKE);
-        mOuterCirclePaint.setStrokeWidth(ResUtil.dip2px(2));
+        mOuterCirclePaint.setStrokeWidth(ResUtil.dp2px(2));
         mOuterCirclePaint.setColor(ResUtil.getColor(R.color.boostengine_frame_circle));
 
         mArcPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mArcPaint.setStyle(Paint.Style.STROKE);
-        mArcPaint.setStrokeWidth(ResUtil.dip2px(2));
+        mArcPaint.setStrokeWidth(ResUtil.dp2px(2));
 
         mInnerCirclePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mInnerCirclePaint.setStyle(Paint.Style.FILL);
@@ -87,11 +87,11 @@ public class BoostView extends View {
         rComputer = new RComputer(r,mCenterX,mCenterY);
         mRadis = rComputer.getCorrectR(mOuterCirclePaint);
 
-        rComputer.consume(ResUtil.dip2px(5));
+        rComputer.consume(ResUtil.dp2px(5));
         mArcRect = rComputer.getCorrectRect(mArcPaint);
 
 
-        rComputer.consume(ResUtil.dip2px(5));
+        rComputer.consume(ResUtil.dp2px(5));
         mRocketBitmap = scaleRocketBitmap();
         LinearGradient linearGradient = new LinearGradient(
                 mCenterX-rComputer.getRemain(), mCenterY,mCenterX+rComputer.getRemain(),mCenterY,

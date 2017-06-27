@@ -7,8 +7,10 @@ import android.view.View;
 import com.tcl.widget.demo.R;
 import com.tcl.widget.demo.ui.base.ABaseFragment;
 import com.tcl.widget.demo.ui.widget.github.CircleProgressView;
+import com.tcl.widget.demo.ui.widget.github.CustomProgressView;
 import com.tcl.widget.demo.ui.widget.github.SubmitButtonView;
 import com.tcl.widget.demo.ui.widget.github.WaveProgressView;
+import com.tcl.widget.demo.uti.NLog;
 
 import java.util.Random;
 
@@ -23,6 +25,7 @@ public class GithubTestFragment extends ABaseFragment {
     private WaveProgressView wave_progress1;
     private Random mRandom;
     private SubmitButtonView submitButtonView;
+    private CustomProgressView custom_progress;
 
 
     @Override
@@ -64,6 +67,25 @@ public class GithubTestFragment extends ABaseFragment {
             @Override
             public void onClick(View v) {
                 submitButtonView.start();
+            }
+        });
+
+        custom_progress = (CustomProgressView) findViewById(R.id.custom_progress);
+        custom_progress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                custom_progress.setValue(mRandom.nextFloat() * custom_progress.getMaxValue());
+            }
+        });
+        custom_progress.setListener(new CustomProgressView.ProgressAnimationListener() {
+            @Override
+            public void onProgressUpdate(int value) {
+                NLog.d(TAG, "onProgressUpdate value = %s", value);
+            }
+
+            @Override
+            public void onFinish() {
+                NLog.d(TAG, "onFinish");
             }
         });
 

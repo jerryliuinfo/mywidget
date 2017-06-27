@@ -44,7 +44,7 @@ public class AndroidPath extends View {
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setColor(ResUtil.getColor(R.color.green));
         mPaint.setStyle(Paint.Style.FILL_AND_STROKE);
-        mPaint.setStrokeWidth(ResUtil.dip2px(3));
+        mPaint.setStrokeWidth(ResUtil.dp2px(3));
 
         originalY = 300;
 

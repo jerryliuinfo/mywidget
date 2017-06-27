@@ -52,7 +52,7 @@ public class CircleView extends View {
 
         mArcPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mArcPaint.setStyle(Paint.Style.STROKE);
-        mArcPaint.setStrokeWidth(ResUtil.dip2px(20));
+        mArcPaint.setStrokeWidth(ResUtil.dp2px(20));
         mArcPaint.setColor(ResUtil.getColor(R.color.blue));
 
 

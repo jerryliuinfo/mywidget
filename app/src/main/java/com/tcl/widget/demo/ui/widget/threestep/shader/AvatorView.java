@@ -62,7 +62,7 @@ public class AvatorView extends View {
 
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
-        mBorderWidth = ResUtil.dip2px(2);
+        mBorderWidth = ResUtil.dp2px(2);
 
 
         mBorderPaint = new Paint(Paint.ANTI_ALIAS_FLAG);

@@ -112,7 +112,7 @@ public class ResUtil {
 
 
 
-    public static int dip2px(float dp){
+    public static int dp2px(float dp){
         Context context = MyApplicaiton.getInstance();
         int px = (int) (dp + 0.5f);
         try {

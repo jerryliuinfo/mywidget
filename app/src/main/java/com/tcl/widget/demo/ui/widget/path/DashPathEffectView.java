@@ -39,7 +39,7 @@ public class DashPathEffectView extends View {
 
     private void init(){
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        PaintConfigUtil.configNormal(mPaint, ResUtil.getColor(R.color.red),ResUtil.dip2px(2), Paint.Style.STROKE);
+        PaintConfigUtil.configNormal(mPaint, ResUtil.getColor(R.color.red),ResUtil.dp2px(2), Paint.Style.STROKE);
 
         mPath = new Path();
         mPath.moveTo(200, 600);

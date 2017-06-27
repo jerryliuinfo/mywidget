@@ -59,10 +59,10 @@ public class SwitchButton extends android.support.v7.widget.AppCompatImageView {
 
         mBgRect = new RectF();
 
-        mRadis = ResUtil.dip2px(10);
+        mRadis = ResUtil.dp2px(10);
 
-        mLeftGap = ResUtil.dip2px(10);
-        mTopGap = ResUtil.dip2px(10);
+        mLeftGap = ResUtil.dp2px(10);
+        mTopGap = ResUtil.dp2px(10);
     }
 
     private float mRadis;//圆半径

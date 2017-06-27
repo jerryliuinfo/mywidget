@@ -40,7 +40,7 @@ public class VolumnView extends View{
 
         mCoordinatePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mCoordinatePaint.setStyle(Paint.Style.STROKE);
-        mCoordinatePaint.setStrokeWidth(ResUtil.dip2px(2));
+        mCoordinatePaint.setStrokeWidth(ResUtil.dp2px(2));
         mCoordinatePaint.setColor(ResUtil.getColor(R.color.white));
     }
 
@@ -82,7 +82,7 @@ public class VolumnView extends View{
     }
 
     private void drawXCoordinate(Canvas canvas){
-        canvas.drawLine(0, getMeasuredHeight(),getMeasuredWidth() - getPaddingRight() - ResUtil.dip2px(20), getMeasuredHeight(), mCoordinatePaint );
+        canvas.drawLine(0, getMeasuredHeight(),getMeasuredWidth() - getPaddingRight() - ResUtil.dp2px(20), getMeasuredHeight(), mCoordinatePaint );
     }
 
     private void drawYCoordinate(Canvas canvas){

@@ -92,7 +92,7 @@ public class MainWhiteListEntryView extends View {
     private void init(Context context,AttributeSet attrs){
         mLinePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mLinePaint.setStyle(Paint.Style.STROKE);
-        mLinePaint.setStrokeWidth(ResUtil.dip2px(2));
+        mLinePaint.setStrokeWidth(ResUtil.dp2px(2));
         mLinePaint.setColor(ResUtil.getColor(R.color.black));
 
         mBgPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -110,14 +110,14 @@ public class MainWhiteListEntryView extends View {
         mBgRect.top = getPaddingTop();
         mBgRect.bottom = h - getPaddingBottom();
 
-        mHorizentalLineStartX = mBgRect.left + ResUtil.dip2px(mLinePadding);
+        mHorizentalLineStartX = mBgRect.left + ResUtil.dp2px(mLinePadding);
         //打勾第一条线的x起点坐标
-        mHookLine1StartX = mHorizentalLineStartX + ResUtil.dip2px(mLinePadding);
+        mHookLine1StartX = mHorizentalLineStartX + ResUtil.dp2px(mLinePadding);
         mHookLine1StartY = getMeasuredHeight() * 3 / 5.0f;
 
         firtstPoint = new Point((int)mHookLine1StartX, (int)mHookLine1StartY);
-        secondPoint = new Point((int)mHookLine1StartX + ResUtil.dip2px(LINE1_MAX_LENGTH), (int)mHookLine1StartY + ResUtil.dip2px(LINE1_MAX_LENGTH));
-        thirdPoint = new Point((int) (mBgRect.right - ResUtil.dip2px(mLinePadding)), (int) (mHorizontalShortLineY + ResUtil.dip2px(mLinePadding)));
+        secondPoint = new Point((int)mHookLine1StartX + ResUtil.dp2px(LINE1_MAX_LENGTH), (int)mHookLine1StartY + ResUtil.dp2px(LINE1_MAX_LENGTH));
+        thirdPoint = new Point((int) (mBgRect.right - ResUtil.dp2px(mLinePadding)), (int) (mHorizontalShortLineY + ResUtil.dp2px(mLinePadding)));
         NLog.d(TAG, "first point x = %s, y = %s, second point x = %s, y = %s, third point x = %s, y = %s",
                 firtstPoint.x,firtstPoint.y,secondPoint.x,secondPoint.y,thirdPoint.x,thirdPoint.y
         );
@@ -127,7 +127,7 @@ public class MainWhiteListEntryView extends View {
 
 
     public void initAnim(){
-        ValueAnimator longLineAnimator = ValueAnimator.ofFloat(mHorizentalLineStartX, mBgRect.right - ResUtil.dip2px(mLinePadding));
+        ValueAnimator longLineAnimator = ValueAnimator.ofFloat(mHorizentalLineStartX, mBgRect.right - ResUtil.dp2px(mLinePadding));
         longLineAnimator.setDuration(mAnimDuration);
         longLineAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -236,7 +236,7 @@ public class MainWhiteListEntryView extends View {
     }
 
     private void drawBg(Canvas canvas){
-        canvas.drawRoundRect(mBgRect,ResUtil.dip2px(1),ResUtil.dip2px(1),mBgPaint);
+        canvas.drawRoundRect(mBgRect,ResUtil.dp2px(1),ResUtil.dp2px(1),mBgPaint);
     }
 
 
@@ -246,7 +246,7 @@ public class MainWhiteListEntryView extends View {
 
     private void drawLongLine(Canvas canvas){
         if (mHorizentalLongLineEndX != 0){
-            mHorizontalLongLineY = mBgRect.top + ResUtil.dip2px(mLineTopPadding) + mLinePaint.getStrokeWidth() / 2;
+            mHorizontalLongLineY = mBgRect.top + ResUtil.dp2px(mLineTopPadding) + mLinePaint.getStrokeWidth() / 2;
             canvas.drawLine(mHorizentalLineStartX, mHorizontalLongLineY, mHorizentalLongLineEndX, mHorizontalLongLineY, mLinePaint);
         }
 
@@ -255,8 +255,8 @@ public class MainWhiteListEntryView extends View {
 
      private void drawShortLine(Canvas canvas){
          if (mHorizentalShortLineEndX != 0){
-             mHorizontalShortLineY = mHorizontalLongLineY + ResUtil.dip2px(mLineTopPadding) + mLinePaint.getStrokeWidth() / 2;
-             thirdPoint.y = (int) (mHorizontalShortLineY +ResUtil.dip2px(mLineTopPadding));
+             mHorizontalShortLineY = mHorizontalLongLineY + ResUtil.dp2px(mLineTopPadding) + mLinePaint.getStrokeWidth() / 2;
+             thirdPoint.y = (int) (mHorizontalShortLineY +ResUtil.dp2px(mLineTopPadding));
              canvas.drawLine(mHorizentalLineStartX, mHorizontalShortLineY, mHorizentalShortLineEndX, mHorizontalShortLineY, mLinePaint);
          }
 

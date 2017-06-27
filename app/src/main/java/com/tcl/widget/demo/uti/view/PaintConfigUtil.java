@@ -15,7 +15,6 @@ public class PaintConfigUtil {
     }
     public static void configText(Paint paint, int color, int textSize) {
         paint.setColor(color);
-        paint.setStyle(Paint.Style.STROKE);
         paint.setTextSize(textSize);
     }
 

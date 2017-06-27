@@ -33,7 +33,7 @@ public class ColorFitler extends View {
     private void init(Context context){
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setStrokeWidth(ResUtil.dip2px(2));
+        mPaint.setStrokeWidth(ResUtil.dp2px(2));
     }
 
     @Override
