@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.tcl.widget.demo.uti.view.ViewUtil;
+import com.tcl.widget.demo.uti.view.MeasureUtil;
 
 /**
  * Created by jerryliu on 2017/4/22.
@@ -27,7 +27,7 @@ public class ViewMeasure extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        setMeasuredDimension(ViewUtil.measureView(widthMeasureSpec,200),ViewUtil.measureView(heightMeasureSpec,300));
+        setMeasuredDimension(MeasureUtil.getMeasuredLength(widthMeasureSpec,200),MeasureUtil.getMeasuredLength(heightMeasureSpec,300));
     }
 
     @Override

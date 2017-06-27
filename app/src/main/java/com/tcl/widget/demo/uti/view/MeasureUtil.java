@@ -35,4 +35,11 @@ public class MeasureUtil {
         Paint.FontMetrics fontMetrics = paint.getFontMetrics();
         return (Math.abs(fontMetrics.ascent) - fontMetrics.descent);
     }
+
+    public static float getTextBaseY(Paint textPaint){
+        Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
+        float top = fontMetrics.top;//为基线到字体上边框的距离,即上图中的top
+        float bottom = fontMetrics.bottom;//为基线到字体下边框的距离,即上图中的bottom
+        return (top + bottom) / 2;
+    }
 }

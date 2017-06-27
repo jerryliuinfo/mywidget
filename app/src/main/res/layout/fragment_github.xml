@@ -3,6 +3,7 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:gravity="center"
               xmlns:app="http://schemas.android.com/apk/res-auto"
     >
     <Button
@@ -10,6 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="重置"
+        android:visibility="gone"
+
         />
     <com.tcl.widget.demo.ui.widget.github.CircleProgressView
         android:id="@+id/circle_progress1"
@@ -19,5 +22,23 @@
         app:start_angel="135"
         app:sweep_angel="270"
         app:bgArcColor="@color/colorAccent"
+        android:visibility="gone"
+        />
+    <com.tcl.widget.demo.ui.widget.github.WaveProgressView
+        android:id="@+id/wave_progress1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"
+        />
+    <com.tcl.widget.demo.ui.widget.github.SubmitButtonView
+        android:id="@+id/submit"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        />
+    <com.tcl.widget.demo.ui.widget.path.DashPathEffectView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
         />
 </LinearLayout>

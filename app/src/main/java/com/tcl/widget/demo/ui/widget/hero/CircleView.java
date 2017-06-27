@@ -12,6 +12,7 @@ import android.view.View;
 
 import com.tcl.widget.demo.R;
 import com.tcl.widget.demo.uti.ResUtil;
+import com.tcl.widget.demo.uti.view.MeasureUtil;
 import com.tcl.widget.demo.uti.view.ViewUtil;
 
 /**
@@ -83,7 +84,7 @@ public class CircleView extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        setMeasuredDimension(ViewUtil.measureView(widthMeasureSpec,300),ViewUtil.measureView(widthMeasureSpec,300));
+        setMeasuredDimension(MeasureUtil.getMeasuredLength(widthMeasureSpec,300),MeasureUtil.getMeasuredLength(widthMeasureSpec,300));
     }
 
     @Override
@@ -107,7 +108,7 @@ public class CircleView extends View {
         String txt = "Hello World";
         Rect rect = new Rect();
         mTextPaint.getTextBounds(txt,0,txt.length(),rect);
-        canvas.drawText(txt,mCircleXY ,ViewUtil.geBaseLineY(mTextPaint, getMeasuredHeight()), mTextPaint);
+        canvas.drawText(txt,mCircleXY ,getMeasuredHeight() / 2 - ViewUtil.getBaseY(mTextPaint), mTextPaint);
     }
 
 
