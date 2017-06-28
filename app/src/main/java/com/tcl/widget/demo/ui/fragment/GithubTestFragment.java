@@ -8,6 +8,7 @@ import com.tcl.widget.demo.R;
 import com.tcl.widget.demo.ui.base.ABaseFragment;
 import com.tcl.widget.demo.ui.widget.github.CircleProgressView;
 import com.tcl.widget.demo.ui.widget.github.CustomProgressView;
+import com.tcl.widget.demo.ui.widget.github.LoadingButtonView;
 import com.tcl.widget.demo.ui.widget.github.SubmitButtonView;
 import com.tcl.widget.demo.ui.widget.github.WaveProgressView;
 import com.tcl.widget.demo.uti.NLog;
@@ -26,6 +27,7 @@ public class GithubTestFragment extends ABaseFragment {
     private Random mRandom;
     private SubmitButtonView submitButtonView;
     private CustomProgressView custom_progress;
+    private LoadingButtonView loading_btn;
 
 
     @Override
@@ -80,12 +82,20 @@ public class GithubTestFragment extends ABaseFragment {
         custom_progress.setListener(new CustomProgressView.ProgressAnimationListener() {
             @Override
             public void onProgressUpdate(int value) {
-                NLog.d(TAG, "onProgressUpdate value = %s", value);
+                //NLog.d(TAG, "onProgressUpdate value = %s", value);
             }
 
             @Override
             public void onFinish() {
                 NLog.d(TAG, "onFinish");
+            }
+        });
+
+        loading_btn = (LoadingButtonView) findViewById(R.id.loading_btn);
+        loading_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loading_btn.startLoading();
             }
         });
 

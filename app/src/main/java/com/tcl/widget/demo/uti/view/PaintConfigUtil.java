@@ -13,6 +13,13 @@ public class PaintConfigUtil {
         paint.setStyle(style);
         paint.setStrokeWidth(strokeWidth);
     }
+
+    public static void configStrokePaint(Paint paint, int color,float strokeWidth) {
+        paint.setColor(color);
+        paint.setStrokeWidth(strokeWidth);
+        paint.setStyle(Paint.Style.STROKE);
+    }
+
     public static void configFillPaint(Paint paint, int color) {
         paint.setColor(color);
         paint.setStyle(Paint.Style.FILL);

@@ -49,5 +49,15 @@
         android:layout_marginTop="10dp"
         android:background="@color/base_gray"
         android:padding="20dp"
+        android:visibility="gone"
+        />
+    <com.tcl.widget.demo.ui.widget.github.LoadingButtonView
+        android:id="@+id/loading_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="#f66b12"
+        android:gravity="center"
+        android:text="启动"
         />
 </LinearLayout>
