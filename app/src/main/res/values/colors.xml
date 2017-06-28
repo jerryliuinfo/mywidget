@@ -16,6 +16,8 @@
     <color name="gray">#808a87</color><!-- 灰色 -->
 
 
+    <color name="horizontal_progress_bg">#e1e5e8</color>
+    <color name="horizontal_progressr">#f66b12</color>
 
 
     <color name="dialogback">#7a510d</color>

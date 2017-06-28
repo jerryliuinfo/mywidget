@@ -22,7 +22,7 @@
         app:start_angel="135"
         app:sweep_angel="270"
         app:bgArcColor="@color/colorAccent"
-
+        android:visibility="gone"
         />
     <com.tcl.widget.demo.ui.widget.github.WaveProgressView
         android:id="@+id/wave_progress1"
@@ -47,5 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:background="@color/base_gray"
+        android:padding="20dp"
         />
 </LinearLayout>
