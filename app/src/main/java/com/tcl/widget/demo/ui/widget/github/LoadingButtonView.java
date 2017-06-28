@@ -1,7 +1,5 @@
 package com.tcl.widget.demo.ui.widget.github;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.content.Context;
@@ -11,7 +9,6 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 
 import com.tcl.widget.demo.R;
-import com.tcl.widget.demo.uti.NLog;
 import com.tcl.widget.demo.uti.ResUtil;
 import com.tcl.widget.demo.uti.view.MeasureUtil;
 import com.tcl.widget.demo.uti.view.PaintConfigUtil;
@@ -70,20 +67,6 @@ public class LoadingButtonView extends android.support.v7.widget.AppCompatButton
 
         mAnimatorSet = new AnimatorSet();
         mAnimatorSet.setDuration(mDuration);
-        mAnimatorSet.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
-                super.onAnimationEnd(animation);
-                //mAnimatorSet.start();
-                NLog.d(TAG, "onAnimationEnd restart animation");
-            }
-
-            @Override
-            public void onAnimationStart(Animator animation) {
-                super.onAnimationStart(animation);
-                NLog.d(TAG, "onAnimationStart");
-            }
-        });
         mAnimatorSet.play(mCircle1Animator).with(mCircle2Animator).with(mCircle3Animator);
     }
 
@@ -167,9 +150,13 @@ public class LoadingButtonView extends android.support.v7.widget.AppCompatButton
         if (mAnimatorSet != null){
             isLoading = true;
             mAnimatorSet.start();
-
         }
     }
+
+    public boolean isLoading(){
+        return isLoading;
+    }
+
 
     public void stopLoading(){
         if (mAnimatorSet != null){

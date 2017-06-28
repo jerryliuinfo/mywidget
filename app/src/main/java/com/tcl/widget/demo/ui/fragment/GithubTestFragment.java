@@ -95,7 +95,11 @@ public class GithubTestFragment extends ABaseFragment {
         loading_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loading_btn.startLoading();
+                if (loading_btn.isLoading()){
+                    loading_btn.stopLoading();
+                }else {
+                    loading_btn.startLoading();
+                }
             }
         });
 
