@@ -10,8 +10,7 @@
         android:id="@+id/btn_reset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="重置"
-        android:visibility="gone"
+        android:text="click me"
 
         />
     <com.tcl.widget.demo.ui.widget.github.CircleProgressView
@@ -59,5 +58,12 @@
         android:background="#f66b12"
         android:gravity="center"
         android:text="启动"
+        android:visibility="gone"
+        />
+    <com.tcl.widget.demo.ui.widget.github.FadeInTextView
+        android:id="@+id/fadeInTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
         />
 </LinearLayout>

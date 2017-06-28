@@ -8,6 +8,7 @@ import com.tcl.widget.demo.R;
 import com.tcl.widget.demo.ui.base.ABaseFragment;
 import com.tcl.widget.demo.ui.widget.github.CircleProgressView;
 import com.tcl.widget.demo.ui.widget.github.CustomProgressView;
+import com.tcl.widget.demo.ui.widget.github.FadeInTextView;
 import com.tcl.widget.demo.ui.widget.github.LoadingButtonView;
 import com.tcl.widget.demo.ui.widget.github.SubmitButtonView;
 import com.tcl.widget.demo.ui.widget.github.WaveProgressView;
@@ -28,6 +29,7 @@ public class GithubTestFragment extends ABaseFragment {
     private SubmitButtonView submitButtonView;
     private CustomProgressView custom_progress;
     private LoadingButtonView loading_btn;
+    private FadeInTextView fadeInTextView;
 
 
     @Override
@@ -61,6 +63,7 @@ public class GithubTestFragment extends ABaseFragment {
             @Override
             public void onClick(View v) {
                 mCircleProgress1.reset();
+                fadeInTextView.startAnimation();
             }
         });
 
@@ -102,6 +105,9 @@ public class GithubTestFragment extends ABaseFragment {
                 }
             }
         });
+
+        fadeInTextView = (FadeInTextView) findViewById(R.id.fadeInTextView);
+        fadeInTextView.setTextString("自定义view实现字符串逐字显示，后边的文字是为了测试换行是否正常显示！");
 
     }
 
