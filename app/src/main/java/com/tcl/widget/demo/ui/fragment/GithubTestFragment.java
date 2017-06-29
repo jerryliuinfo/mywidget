@@ -3,6 +3,7 @@ package com.tcl.widget.demo.ui.fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Toast;
 
 import com.tcl.widget.demo.R;
 import com.tcl.widget.demo.ui.base.ABaseFragment;
@@ -10,6 +11,7 @@ import com.tcl.widget.demo.ui.widget.github.CircleProgressView;
 import com.tcl.widget.demo.ui.widget.github.CustomProgressView;
 import com.tcl.widget.demo.ui.widget.github.FadeInTextView;
 import com.tcl.widget.demo.ui.widget.github.LoadingButtonView;
+import com.tcl.widget.demo.ui.widget.github.PwdInputView;
 import com.tcl.widget.demo.ui.widget.github.SubmitButtonView;
 import com.tcl.widget.demo.ui.widget.github.WaveProgressView;
 import com.tcl.widget.demo.uti.NLog;
@@ -30,6 +32,7 @@ public class GithubTestFragment extends ABaseFragment {
     private CustomProgressView custom_progress;
     private LoadingButtonView loading_btn;
     private FadeInTextView fadeInTextView;
+    private PwdInputView pwd_input;
 
 
     @Override
@@ -109,6 +112,25 @@ public class GithubTestFragment extends ABaseFragment {
         fadeInTextView = (FadeInTextView) findViewById(R.id.fadeInTextView);
         fadeInTextView.setTextString("自定义view实现字符串逐字显示，后边的文字是为了测试换行是否正常显示！");
 
+        pwd_input = (PwdInputView) findViewById(R.id.pwd_input);
+        pwd_input.setRightPwd("654321");
+        pwd_input.setCallback(new PwdInputView.PwdCallback() {
+            @Override
+            public void onProgress(String pwd) {
+
+            }
+
+            @Override
+            public void onEquals(String pwd) {
+                Toast.makeText(GithubTestFragment.this.getActivity(),"onEquals",Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onDifference(String pwd) {
+                Toast.makeText(GithubTestFragment.this.getActivity(),"onDifference",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 
