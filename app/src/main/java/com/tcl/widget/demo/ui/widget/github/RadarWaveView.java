@@ -12,7 +12,6 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.tcl.widget.demo.R;
-import com.tcl.widget.demo.uti.NLog;
 import com.tcl.widget.demo.uti.ResUtil;
 import com.tcl.widget.demo.uti.view.MeasureUtil;
 import com.tcl.widget.demo.uti.view.PaintConfigUtil;

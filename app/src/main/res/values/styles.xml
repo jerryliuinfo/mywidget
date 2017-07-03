@@ -24,4 +24,6 @@
         <item name="coordinatesTextSize">11sp</item>
         <item name="coordinatesTextColor">#808080</item>
     </style>
+
+
 </resources>

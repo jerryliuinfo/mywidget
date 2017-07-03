@@ -104,4 +104,13 @@
     <color name="base_permission_guide_switch_btn_line">#f2f2f2</color>
     <color name="base_permission_guide_switch_btn_line_select">#9ae9e1</color>
 
+
+
+    <color name="slanted_c2">#C2185B</color>
+    <color name="slanted_e9">#e91e63</color>
+    <color name="slanted_ff">#ff5252</color>
+    <color name="slanted_72">#727272</color>
+    <color name="slanted_4c">#4caf50</color>
+    <color name="slanted_fb">#fbc02d</color>
+
 </resources>
