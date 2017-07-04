@@ -1,6 +1,8 @@
-package com.tcl.widget.demo.ui.widget.github.floatview;
+package com.tcl.widget.demo.ui.widget.github.floatview.transition;
 
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewParent;
 
 import java.lang.ref.WeakReference;
 
@@ -13,7 +15,7 @@ public class YumFloating implements ITransition {
 
 
     public YumFloating(View view) {
-        this.mTargetViewRefrence = new WeakReference<View>(view);
+        this.mTargetViewRefrence = new WeakReference<>(view);
     }
 
 
@@ -115,6 +117,18 @@ public class YumFloating implements ITransition {
         View targetView;
         if ((targetView = getTargetView()) != null){
             targetView.setY(y);
+        }
+    }
+
+    public void clear(){
+        View view = getTargetView();
+        if (view != null){
+            ViewParent viewParent = view.getParent();
+            if (viewParent instanceof ViewGroup){
+                ViewGroup parent = (ViewGroup) viewParent;
+                parent.removeView(view);
+                mTargetViewRefrence.clear();
+            }
         }
     }
 }

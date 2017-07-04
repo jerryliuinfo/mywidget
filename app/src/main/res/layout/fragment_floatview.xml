@@ -2,6 +2,84 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+            android:gravity="center"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        >
+        <ImageView
+            android:id="@+id/icPaperAirPlane"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/paper_airplane" />
+        <ImageView
+            android:id="@+id/icCommandLine"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="51.7dp"
+            android:src="@drawable/command_line" />
+        <ImageView
+            android:id="@+id/icLike"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="51.7dp"
+            android:src="@drawable/like" />
+
+        <ImageView
+            android:id="@+id/icStar"
+            android:layout_width="@dimen/bottom_op_item_w"
+            android:layout_height="@dimen/bottom_op_item_h"
+            android:layout_marginLeft="51.7dp"
+            android:src="@drawable/star" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        >
+        <ImageView
+            android:id="@+id/icBeer"
+            android:layout_width="@dimen/bottom_op_item_w"
+            android:layout_height="@dimen/bottom_op_item_h"
+            android:src="@drawable/beer" />
+
+        <ImageView
+            android:id="@+id/icMilk"
+            android:layout_width="@dimen/bottom_op_item_w"
+            android:layout_height="@dimen/bottom_op_item_h"
+            android:layout_marginLeft="51.7dp"
+            android:src="@drawable/milk" />
+
+
+        <ImageView
+            android:id="@+id/icSoda"
+            android:layout_width="@dimen/bottom_op_item_w"
+            android:layout_height="@dimen/bottom_op_item_h"
+            android:layout_marginLeft="51.7dp"
+            android:src="@drawable/soda" />
+
+        <ImageView
+            android:id="@+id/icCream"
+            android:layout_width="@dimen/bottom_op_item_w"
+            android:layout_height="@dimen/bottom_op_item_h"
+            android:layout_marginLeft="51.7dp"
+            android:src="@drawable/ice_cream" />
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/icPlane"
+        android:layout_width="62dp"
+        android:layout_height="62dp"
+        android:layout_marginTop=""
+        android:layout_marginBottom="34dp"
+        android:src="@drawable/floating_plane"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </LinearLayout>

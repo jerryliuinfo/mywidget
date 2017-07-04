@@ -14,7 +14,7 @@ import com.tcl.widget.demo.ui.widget.github.floatview.transition.YumFloating;
  * Created by jerryliu on 2017/7/4.
  */
 
-public class BearPathFloatingTransition extends BaseFloatingPathTraniton {
+public class BearFloating extends BaseFloatingPathTraniton {
     private int mDuraiton = 5000;
     @Override
     public void applyFloating(final YumFloating yumFloating) {

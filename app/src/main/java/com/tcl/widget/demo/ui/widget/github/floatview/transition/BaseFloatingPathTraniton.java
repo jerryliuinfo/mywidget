@@ -4,7 +4,7 @@ package com.tcl.widget.demo.ui.widget.github.floatview.transition;
  * Created by jerryliu on 2017/7/4.
  */
 
-public abstract class BasePathFloatingTraniton implements FloatingPathTransition {
+public abstract class BaseFloatingPathTraniton implements FloatingPathTransition {
     private PathPostion mPathPostion;
     private FloatingPath mFloatingPath;
     private float[] mPos;

@@ -3,6 +3,8 @@ package com.tcl.widget.demo.ui.fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.tcl.widget.demo.R;
@@ -14,6 +16,10 @@ import com.tcl.widget.demo.ui.widget.github.LoadingButtonView;
 import com.tcl.widget.demo.ui.widget.github.PwdInputView;
 import com.tcl.widget.demo.ui.widget.github.SubmitButtonView;
 import com.tcl.widget.demo.ui.widget.github.WaveProgressView;
+import com.tcl.widget.demo.ui.widget.github.floatview.Floating;
+import com.tcl.widget.demo.ui.widget.github.floatview.FloatingBuilder;
+import com.tcl.widget.demo.ui.widget.github.floatview.FloatingElement;
+import com.tcl.widget.demo.ui.widget.github.floatview.effect.TranslationFloatingTransition;
 import com.tcl.widget.demo.uti.NLog;
 
 import java.util.Random;
@@ -33,6 +39,13 @@ public class GithubTestFragment extends ABaseFragment {
     private LoadingButtonView loading_btn;
     private FadeInTextView fadeInTextView;
     private PwdInputView pwd_input;
+
+
+    private Floating floating;
+    private ImageView icPaperAirPlane;
+
+
+
 
 
     @Override
@@ -129,6 +142,24 @@ public class GithubTestFragment extends ABaseFragment {
             @Override
             public void onDifference(String pwd) {
                 Toast.makeText(GithubTestFragment.this.getActivity(),"onDifference",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        floating = new Floating(getActivity());
+        icPaperAirPlane = (ImageView) findViewById(R.id.icPaperAirPlane);
+        icPaperAirPlane.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ImageView imageView = new ImageView(GithubTestFragment.this.getActivity());
+                imageView.setImageResource(R.drawable.paper_airplane);
+                imageView.setLayoutParams(new ViewGroup.LayoutParams(icPaperAirPlane.getMeasuredWidth(),icPaperAirPlane.getMeasuredHeight()));
+
+                FloatingElement element = new FloatingBuilder().floatTransiton(new TranslationFloatingTransition()).
+                        anchorView(v).
+                        targetView(imageView).
+                        build();
+                floating.startFloating(element);
             }
         });
     }

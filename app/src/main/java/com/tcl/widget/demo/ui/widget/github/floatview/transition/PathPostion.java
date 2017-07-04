@@ -5,4 +5,6 @@ package com.tcl.widget.demo.ui.widget.github.floatview.transition;
  */
 
 public class PathPostion {
+    public float x;
+    public float y;
 }
